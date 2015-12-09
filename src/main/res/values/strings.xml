@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">LociFresh</string>
+
+    <string name="title_section1">StartSeite</string>
+    <string name="title_section2">Rezepte</string>
+    <string name="title_section3">Wochenpakete</string>
+    <string name="title_section4">Einzelprodukte</string>
+    <string name="title_section5">Warenkorb</string>
+    <string name="title_section6">Konto</string>
+    <string name="title_section7">Favoriten</string>
+    <string name="title_section8">StrichcodeScanner</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="blindText">Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.\nAbgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik, eines großen Sprachozeans.\nEin kleines Bächlein namens Duden fließt durch ihren Ort und versorgt sie mit den nötigen Regelialien. Es ist ein paradiesmatisches Land, in dem einem gebratene Satzteile in den Mund fliegen. Nicht einmal von der allmächtigen Interpunktion werden die Blindtexte beherrscht – ein geradezu unorthographisches Leben. Eines Tages aber beschloß eine kleine Zeile Blindtext, ihr Name war Lorem Ipsum, hinaus zu gehen in die weite Grammatik. Der große Oxmox riet ihr davon ab, da es dort wimmele von bösen Kommata, wilden Fragezeichen und hinterhältigen Semikoli, doch das Blindtextchen ließ sich nicht beirren. Es packte seine sieben Versalien, schob sich sein Initial in den Gürtel und machte sich auf den Weg. Als es die ersten Hügel des Kursivgebirges erklommen hatte, warf es einen letzten Blick zurück auf die Skyline seiner Heimatstadt Buchstabhausen, die Headline von Alphabetdorf und die Subline seiner eigenen Straße, der Zeilengasse. Wehmütig lief ihm eine rhetorische Frage über die Wange, dann setzte es seinen Weg fort. Unterwegs traf es eine Copy.</string>
+    <string name="fisch1">Zutaten:\n300 gr Fisch\n100 gr. Karotten\n\nZubereitung:\n1.kaufen\n2.auspacken\n3.Zutaten drauf\n4.braten\5.fertig</string>
+    <string name="fisch2"></string>
+    <string name="fisch3"></string>
+    <string name="fisch4"></string>
+</resources>

@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="Start">
+        <item>0</item>
+        <item>@array/Rezept</item>
+        <item>@array/KochBox</item>
+        <item>@array/Einzelprodukte</item>
+    </array>
+
+    <array name="Rezept">
+        <item>1</item>
+        <item>Rezept</item>
+        <item>@drawable/red_apple</item>
+        <item>@array/Laender</item>
+        <item>@array/Vegan</item>
+        <item>@array/Fisch</item>
+        <item>@array/Obst</item>
+        <item>@array/Gemuese</item>
+    </array>
+
+    <array name="KochBox">
+        <item>2</item>
+        <item>Wochenpakete</item>
+        <item>@drawable/red_apple</item>
+        <item>@array/Laender</item>
+        <item>@array/Vegan</item>
+        <item>@array/Fisch</item>
+        <item>@array/Obst</item>
+        <item>@array/Gemuese</item>
+    </array>
+
+    <array name="Einzelprodukte">
+        <item>3</item>
+        <item>Einzelprodukte</item>
+        <item>@drawable/red_apple</item>
+        <item>@array/Vegan</item>
+        <item>@array/Fisch</item>
+        <item>@array/Obst</item>
+        <item>@array/Gemuese</item>
+        <item>@array/Konserven</item>
+    </array>
+
+    <array name="Laender">
+        <item>0</item>
+        <item>Länder</item>
+        <item>@drawable/laender</item>
+        <item>@array/LaenderRezepte</item>//Rezepte
+        <item>@array/LaenderWochenBox</item>//Wochenbox
+        <item>EMPTY</item>//Einzelprodukt
+    </array>
+
+    <array name ="LaenderRezepte">
+        <item>@array/Rezept1</item>
+        <item>@array/Rezept2</item>
+        <item>@array/Rezept3</item>
+        <item>@array/Rezept4</item>
+    </array>
+
+    <array name="LaenderWochenBox">
+        <item>@array/KochBox1</item>
+        <item>@array/KochBox2</item>
+        <item>@array/KochBox3</item>
+    </array>
+
+    <array name="Vegan">
+        <item>0</item>
+        <item>Vegan</item>
+        <item>@drawable/vegan</item>
+        <item>@array/VeganRezepte</item>//Rezepte
+        <item>@array/VeganWochenBox</item>//Wochenbox
+        <item>@array/VeganEinzel</item>//Einzelprodukt
+    </array>
+
+    <array name ="VeganRezepte">
+        <item>@array/Rezept5</item>
+        <item>@array/Rezept6</item>
+        <item>@array/Rezept7</item>
+        <item>@array/Rezept8</item>
+    </array>
+
+    <array name="VeganEinzel">
+        <item>@array/Einzelpodukt7</item>
+        <item>@array/Einzelpodukt8</item>
+        <item>@array/Einzelpodukt8</item>
+    </array>
+
+    <array name="VeganWochenBox">
+        <item>@array/KochBox4</item>
+        <item>@array/KochBox5</item>
+        <item>@array/KochBox6</item>
+    </array>
+
+    <array name="Fisch">
+        <item>0</item>
+        <item>Fisch</item>
+        <item>@drawable/fisch</item>
+        <item>@array/FischRezepte</item>//Rezepte
+        <item>@array/FischWochenBox</item>//Wochenbox
+        <item>@array/FischEinzel</item>//Einzelprodukt
+    </array>
+
+    <array name ="FischRezepte">
+        <item>@array/Rezept9</item>
+        <item>@array/Rezept10</item>
+        <item>@array/Rezept11</item>
+        <item>@array/Rezept12</item>
+    </array>
+
+    <array name="FischEinzel">
+        <item>@array/Einzelpodukt8</item>
+        <item>@array/Einzelpodukt6</item>
+        <item>@array/Einzelpodukt6</item>
+    </array>
+
+    <array name="FischWochenBox">
+        <item>@array/KochBox7</item>
+        <item>@array/KochBox8</item>
+        <item>@array/KochBox9</item>
+    </array>
+
+    <array name="Obst">
+        <item>0</item>
+        <item>Obst</item>
+        <item>@drawable/red_apple</item>
+        <item>@array/ObstRezepte</item>//Rezepte
+        <item>@array/ObstWochenBox</item>//Wochenbox
+        <item>@array/ObstEinzel</item>//Einzelprodukt
+    </array>
+
+    <array name ="ObstRezepte">
+        <item>@array/Rezept13</item>
+        <item>@array/Rezept14</item>
+        <item>@array/Rezept15</item>
+        <item>@array/Rezept16</item>
+    </array>
+
+    <array name="ObstEinzel">
+        <item>@array/Einzelpodukt3</item>
+        <item>@array/Einzelpodukt4</item>
+        <item>@array/Einzelpodukt5</item>
+    </array>
+
+    <array name="ObstWochenBox">
+        <item>@array/KochBox10</item>
+        <item>@array/KochBox11</item>
+        <item>@array/KochBox12</item>
+    </array>
+
+    <array name="Gemuese">
+        <item>0</item>
+        <item>Gemüse</item>
+        <item>@drawable/gemuese</item>
+        <item>@array/GemueseRezepte</item>//Rezepte
+        <item>@array/GemueseWochenBox</item>//Wochenbox
+        <item>@array/GemueseEinzel</item>//Einzelprodukt
+    </array>
+
+    <array name ="GemueseRezepte">
+        <item>@array/Rezept17</item>
+        <item>@array/Rezept18</item>
+        <item>@array/Rezept19</item>
+        <item>@array/Rezept20</item>
+    </array>
+
+    <array name="GemueseEinzel">
+        <item>@array/Einzelpodukt1</item>
+        <item>@array/Einzelpodukt2</item>
+        <item>@array/Einzelpodukt2</item>
+    </array>
+
+    <array name="GemueseWochenBox">
+        <item>@array/KochBox13</item>
+        <item>@array/KochBox13</item>
+        <item>@array/KochBox13</item>
+    </array>
+
+    <array name="Konserven">
+        <item>0</item>
+        <item>Konserven</item>
+        <item>@drawable/konserven</item>
+        <item>EMPTY</item>//Rezepte
+        <item>EMPTY</item>//Wochenbox
+        <item>@array/KonservenEinzel</item>//Einzelprodukt
+    </array>
+
+    <array name="KonservenEinzel">
+        <item>@array/Einzelpodukt1</item>
+        <item>@array/Einzelpodukt2</item>
+        <item>@array/Einzelpodukt2</item>
+    </array>
+
+    <array name="Rezept1">
+        <item>Rezept1</item>
+        <item>Spagetti</item>
+        <item>@drawable/red_apple</item>
+        <item><h1>Kurzbeschreibung</h1>\n\&amp;#8226</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Portion</item>//Einheit
+
+    </array>
+
+    <array name="Rezept3">
+        <item>Rezept3</item>
+        <item>Pizza de Mare</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Portion</item>//Einheit
+
+    </array>
+
+    <array name="Rezept4">
+        <item>Rezept4</item>
+        <item>Risotto</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Portion</item>//Einheit
+
+    </array>
+
+    <array name="Rezept5">
+        <item>Rezept5</item>
+        <item>Apfelkuchen</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Portion</item>//Einheit
+
+    </array>
+
+    <array name="Rezept6">
+        <item>Rezept6</item>
+        <item>Kokusmilcheis</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Portion</item>//Einheit
+
+    </array>
+
+    <array name="Rezept7">
+        <item>Rezept7</item>
+        <item>RezeptTitle7</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Portion</item>//Einheit
+
+    </array>
+
+    <array name="Rezept8">
+        <item>Rezept8</item>
+        <item>RezeptTitle8</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Portion</item>//Einheit
+
+    </array>
+
+    <array name="Rezept9">
+        <item>Rezept9</item>
+        <item>Lachs im Teig</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/fisch1</item>//Beschreibung
+        <item>1.0</item>
+        <item>Portion</item>//Einheit
+
+    </array>
+
+    <array name="Rezept10">
+        <item>Rezept10</item>
+        <item>Seehecht gegrillt</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/fisch1</item>//Beschreibung
+        <item>1.0</item>
+        <item>Portion</item>//Einheit
+
+    </array>
+
+    <array name="Rezept11">
+        <item>Rezept11</item>
+        <item>Lachs gegrillt</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/fisch1</item>//Beschreibung
+        <item>1.0</item>
+        <item>Portion</item>//Einheit
+
+    </array>
+
+    <array name="Rezept12">
+        <item>Rezept12</item>
+        <item>Forelle geröstet</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/fisch1</item>//Beschreibung
+        <item>1.0</item>
+        <item>Portion</item>//Einheit
+
+    </array>
+
+    <array name="Rezept13">
+        <item>Rezept13</item>
+        <item>RezeptTitle13</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Portion</item>//Einheit
+
+    </array>
+
+    <array name="Rezept14">
+        <item>Rezept14</item>
+        <item>RezeptTitle14</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Portion</item>//Einheit
+
+    </array>
+
+    <array name="Rezept15">
+        <item>Rezept15</item>
+        <item>RezeptTitle15</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Portion</item>//Einheit
+
+    </array>
+
+    <array name="Rezept16">
+        <item>Rezept16</item>
+        <item>RezeptTitle16</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Portion</item>//Einheit
+
+    </array>
+
+    <array name="Rezept17">
+        <item>Rezept17</item>
+        <item>RezeptTitle17</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Portion</item>//Einheit
+
+    </array>
+
+    <array name="Rezept18">
+        <item>Rezept18</item>
+        <item>RezeptTitle18</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Portion</item>//Einheit
+
+    </array>
+
+    <array name="Rezept19">
+        <item>Rezept19</item>
+        <item>RezeptTitle19</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Portion</item>//Einheit
+
+    </array>
+
+    <array name="Rezept20">
+        <item>Rezept20</item>
+        <item>RezeptTitle20</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Portion</item>//Einheit
+
+    </array>
+
+    <array name="Rezept2">
+        <item>Rezept2</item>
+        <item>Pizzabrot</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Portion</item>//Einheit
+
+    </array>
+
+    <array name="KochBox1">
+        <item>KochBox1</item>
+        <item>Wochenpaket1</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Wochenpaket</item>//Einheit
+
+    </array>
+
+    <array name="KochBox2">
+        <item>KochBox2</item>
+        <item>Wochenpaket2</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Wochenpaket</item>//Einheit
+
+    </array>
+
+    <array name="KochBox3">
+        <item>KochBox3</item>
+        <item>Wochenpaket3</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Wochenpaket</item>//Einheit
+
+    </array>
+
+    <array name="KochBox4">
+        <item>KochBox4</item>
+        <item>Wochenpaket4</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Wochenpaket</item>//Einheit
+
+    </array>
+    <array name="KochBox5">
+        <item>KochBox5</item>
+        <item>Wochenpaket5</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Wochenpaket</item>//Einheit
+
+    </array>
+    <array name="KochBox6">
+        <item>KochBox6</item>
+        <item>Wochenpaket6</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Wochenpaket</item>//Einheit
+
+    </array>
+    <array name="KochBox7">
+        <item>KochBox7</item>
+        <item>Wochenpaket7</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Wochenpaket</item>//Einheit
+
+    </array>
+    <array name="KochBox8">
+        <item>KochBox8</item>
+        <item>Wochenpaket8</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Wochenpaket</item>//Einheit
+
+    </array>
+    <array name="KochBox9">
+        <item>KochBox9</item>
+        <item>Wochenpaket9</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Wochenpaket</item>//Einheit
+
+    </array>
+    <array name="KochBox10">
+        <item>KochBox10</item>
+        <item>Wochenpaket10</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Wochenpaket</item>//Einheit
+
+    </array>
+    <array name="KochBox11">
+        <item>KochBox11</item>
+        <item>Wochenpaket11</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Wochenpaket</item>//Einheit
+
+    </array>
+    <array name="KochBox12">
+        <item>KochBox12</item>
+        <item>Wochenpaket12</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Wochenpaket</item>//Einheit
+
+    </array>
+    <array name="KochBox13">
+        <item>KochBox13</item>
+        <item>Wochenpaket13</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Wochenpaket</item>//Einheit
+
+    </array>
+
+    <array name="Einzelpodukt1">
+        <item>Einzelpodukt1</item>
+        <item>Einzelpodukt1</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Stück</item>//Einheit
+
+    </array>
+
+    <array name="Einzelpodukt2">
+        <item>Einzelpodukt2</item>
+        <item>Karotten</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Stück</item>//Einheit
+
+    </array>
+
+    <array name="Einzelpodukt3">
+        <item>Einzelpodukt3</item>
+        <item>Apfel 1</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibun
+        <item>1.0</item>
+        <item>kg</item>//Einheit
+
+    </array>
+    <array name="Einzelpodukt4">
+        <item>Einzelpodukt4</item>
+        <item>Apfel 2</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Stück</item>//Einheit
+
+    </array>
+    <array name="Einzelpodukt5">
+        <item>Einzelpodukt5</item>
+        <item>Ananas</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Stück</item>//Einheit
+
+    </array>
+    <array name="Einzelpodukt6">
+        <item>Einzelpodukt6</item>
+        <item>Lachs</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Stück</item>//Einheit
+
+    </array>
+    <array name="Einzelpodukt7">
+        <item>Einzelpodukt7</item>
+        <item>Tofu</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Stück</item>//Einheit
+
+    </array>
+    <array name="Einzelpodukt8">
+        <item>Einzelpodukt8</item>
+        <item>Einzelpodukt8</item>
+        <item>@drawable/red_apple</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/blindText</item>//Beschreibung
+        <item>1.0</item>
+        <item>Stück</item>//Einheit
+
+    </array>
+
+
+</resources>
