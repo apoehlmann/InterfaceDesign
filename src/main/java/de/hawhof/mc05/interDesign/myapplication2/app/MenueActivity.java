@@ -66,10 +66,8 @@ public class MenueActivity extends AppCompatActivity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
-
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, StartFragment.newInstance(MenueActivity.START))
-                .commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, StartFragment2.newInstance(MenueActivity.START)).commit();
+       // getSupportFragmentManager().beginTransaction().replace(R.id.container, StartFragment.newInstance(MenueActivity.START)).commit();
 
     }
 

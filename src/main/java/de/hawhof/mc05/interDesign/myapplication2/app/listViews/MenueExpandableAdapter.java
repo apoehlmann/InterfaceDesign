@@ -1,11 +1,18 @@
 package de.hawhof.mc05.interDesign.myapplication2.app.listViews;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.support.annotation.NonNull;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+import de.hawhof.mc05.interDesign.myapplication2.app.R;
+import de.hawhof.mc05.interDesign.myapplication2.app.model.Menue;
+import de.hawhof.mc05.interDesign.myapplication2.app.model.SubMenue;
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,16 +20,14 @@ import java.util.List;
 /**
  * Created by alex on 05.12.15.
  */
-public class MenueExpandableAdapter<T,E,R> extends BaseExpandableListAdapter {
+public class MenueExpandableAdapter<T> extends BaseExpandableListAdapter {
 
     private final Context context;
     private final List<T> listDataHeader;
-    private final HashMap<E, List<R>> listDataChild;
 
-    public MenueExpandableAdapter(Context context,@NonNull List<T> listDataHeader,@NonNull HashMap<E, List<R>> listChildData) {
+    public MenueExpandableAdapter(Context context,@NonNull List<T> listDataHeader) {
         this.context = context;
         this.listDataHeader = listDataHeader;
-        this.listDataChild = listChildData;
     }
 
     /**
@@ -44,7 +49,8 @@ public class MenueExpandableAdapter<T,E,R> extends BaseExpandableListAdapter {
      */
     @Override
     public int getChildrenCount(int groupPosition) {
-        return listDataChild.get(this.listDataHeader.get(groupPosition)).size();
+        return ((Menue) this.listDataHeader.get(groupPosition)).getSubMenues().size();
+        //listDataChild.get(this.listDataHeader.get(groupPosition)).size();
     }
 
     /**
@@ -68,7 +74,7 @@ public class MenueExpandableAdapter<T,E,R> extends BaseExpandableListAdapter {
      */
     @Override
     public Object getChild(int groupPosition, int childPosition) {
-        return listDataChild.get(this.listDataHeader.get(groupPosition)).get(childPosition);
+        return ((Menue) this.listDataHeader.get(groupPosition)).getSubMenues().get(childPosition);
     }
 
     /**
@@ -133,7 +139,16 @@ public class MenueExpandableAdapter<T,E,R> extends BaseExpandableListAdapter {
      */
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
-        return null;//TODO:
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
+
+        final Menue menue = (Menue) this.listDataHeader.get(groupPosition);
+        View rowView= inflater.inflate(R.layout.menue2, null, true);
+        if(menue != null) {
+            ImageView titleImage = (ImageView) rowView.findViewById(R.id.menue2Image);
+            TextView titleText = (TextView) rowView.findViewById(R.id.menue2Title);
+            titleText.setText(menue.getTitle());
+        }
+        return rowView;
     }
 
     /**
@@ -156,7 +171,16 @@ public class MenueExpandableAdapter<T,E,R> extends BaseExpandableListAdapter {
      */
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-        return null;//TODO:
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
+
+        final TypedArray menue = ((Menue)this.listDataHeader.get(groupPosition)).getSubMenues().get(childPosition);
+        View rowView= inflater.inflate(R.layout.submenue2, null, true);
+        if(menue != null) {
+            ImageView titleImage = (ImageView) rowView.findViewById(R.id.submenueimage);
+            TextView titleText = (TextView) rowView.findViewById(R.id.submenuetext);
+            titleText.setText(menue.getString(1));
+        }
+        return rowView;
     }
 
     /**

@@ -1,15 +1,17 @@
 package de.hawhof.mc05.interDesign.myapplication2.app.fragment;
 
 import android.app.Activity;
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ExpandableListView;
 import android.widget.ListView;
 import de.hawhof.mc05.interDesign.myapplication2.app.MenueActivity;
 import de.hawhof.mc05.interDesign.myapplication2.app.R;
+import de.hawhof.mc05.interDesign.myapplication2.app.listViews.MenueExpandableAdapter;
 import de.hawhof.mc05.interDesign.myapplication2.app.listViews.Menue_ArrayAdapter;
 import de.hawhof.mc05.interDesign.myapplication2.app.model.Menue;
 
@@ -17,39 +19,39 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by alex on 03.12.15.
+ * Created by alex on 10.12.15.
  */
-public class StartFragment extends Fragment {
+public class StartFragment2 extends Fragment{
     /**
      * The fragment argument representing the section number for this
      * fragment.
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
-    private ListView listView;
+    private ExpandableListView listView;
 
     /**
      * Returns a new instance of this fragment for the given section
      * number.
      */
-    public static StartFragment newInstance(int index) {
+    public static StartFragment2 newInstance(int index) {
 
-        StartFragment fragment = new StartFragment();
+        StartFragment2 fragment = new StartFragment2();
         Bundle args = new Bundle();
         args.putInt(ARG_SECTION_NUMBER, index);
         fragment.setArguments(args);
         return fragment;
     }
-    public StartFragment() {
+    public StartFragment2() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_menue, container, false);
-        this.listView = (ListView) rootView.findViewById(R.id.listView_menue);
+        View rootView = inflater.inflate(R.layout.fragment_menue2, container, false);
+        this.listView = (ExpandableListView) rootView.findViewById(R.id.expandableListView);
         Menue[] array = {new Menue(this.getResources().obtainTypedArray(R.array.Rezept),this.getContext()),new Menue(this.getResources().obtainTypedArray(R.array.KochBox),this.getContext()),new Menue(this.getResources().obtainTypedArray(R.array.Einzelprodukte),this.getContext())};
         List<Menue> list = Arrays.asList(array);
-        Menue_ArrayAdapter adapter = new Menue_ArrayAdapter<Menue>(this.getContext(),R.layout.menue,list);
+        MenueExpandableAdapter adapter = new MenueExpandableAdapter<Menue>(this.getContext(),list);
         adapter.notifyDataSetChanged();
         adapter.notifyDataSetInvalidated();
         listView.setAdapter(adapter);
