@@ -2,6 +2,7 @@ package de.hawhof.mc05.interDesign.myapplication2.app;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v4.widget.DrawerLayout;
+import android.view.View;
 import android.widget.*;
 import com.google.gson.Gson;
 import de.hawhof.mc05.interDesign.myapplication2.app.Controller.StorageController;
@@ -23,17 +25,8 @@ public class MenueActivity extends AppCompatActivity
 
     private final static int START = 0;
     private final static int REZEPT = 1;
-    private final static int REZEPT_1 = 11;
-    private final static int REZEPT_2 = 12;
-    private final static int REZEPT_3 = 13;
     private final static int KOCHBOX = 2;
-    private final static int KOCHBOX_1 = 21;
-    private final static int KOCHBOX_2 = 22;
-    private final static int KOCHBOX_3 = 23;
     private final static int EINZEL = 3;
-    private final static int EINZEL_1 = 31;
-    private final static int EINZEL_2 = 32;
-    private final static int EINZEL_3 = 33;
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -55,16 +48,25 @@ public class MenueActivity extends AppCompatActivity
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
+        this.getSupportActionBar().setDisplayUseLogoEnabled(true);
+        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        this.getSupportActionBar().setHomeButtonEnabled(false);
+        this.getSupportActionBar().invalidateOptionsMenu();
         try {
             StorageController.file.mkdirs();
             StorageController.file.createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+        // Set the drawer toggle as the DrawerListener
+        //(DrawerLayout) ((DrawerLayout) findViewById(R.id.drawer_layout)).setDrawerListener().setDrawerListener(mDrawerToggle);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, StartFragment2.newInstance(MenueActivity.START)).commit();
        // getSupportFragmentManager().beginTransaction().replace(R.id.container, StartFragment.newInstance(MenueActivity.START)).commit();
@@ -75,10 +77,14 @@ public class MenueActivity extends AppCompatActivity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         Fragment fragment = null;
-        if(position == 0){
-            fragment = StartFragment.newInstance(position + 1);
-        }else if(position < 4){
-            fragment = SubMenueFragment.newInstance(position+1);
+        if(position == MenueActivity.START){
+            fragment = StartFragment2.newInstance(MenueActivity.START);
+        }else if(position == MenueActivity.REZEPT){
+            fragment = StartFragment2.newInstance(MenueActivity.REZEPT);
+        }else if(position == MenueActivity.KOCHBOX){
+            fragment = StartFragment2.newInstance(MenueActivity.KOCHBOX);
+        }else if(position == MenueActivity.EINZEL){
+            fragment = StartFragment2.newInstance(MenueActivity.EINZEL);
         }else if(position < 9){
             fragment = ShoppingBasketFragment.newInstance(position+1);
         }else if(position == 9){
@@ -95,25 +101,21 @@ public class MenueActivity extends AppCompatActivity
         SharedPreferences.Editor editor = sharedPref.edit();
 
         switch (number) {
-            case 0:
+            case MenueActivity.START:
                 mTitle = getString(R.string.title_section1);
                 editor.putString("PAGE",getString(R.string.title_section1));
                 break;
-            case 1:
-                mTitle = getString(R.string.title_section1);
-                editor.putString("PAGE",getString(R.string.title_section1));
-                break;
-            case 2:
+            case MenueActivity.REZEPT:
                 mTitle = getString(R.string.title_section2);
                 editor.putInt("TYPE",3);
                 editor.putString("PAGE",getString(R.string.title_section2));
                 break;
-            case 3:
+            case MenueActivity.KOCHBOX:
                 mTitle = getString(R.string.title_section3);
                 editor.putInt("TYPE",4);
                 editor.putString("PAGE",getString(R.string.title_section3));
                 break;
-            case 4:
+            case MenueActivity.EINZEL:
                 mTitle = getString(R.string.title_section4);
                 editor.putInt("TYPE",5);
                 editor.putString("PAGE",getString(R.string.title_section4));
@@ -148,6 +150,7 @@ public class MenueActivity extends AppCompatActivity
         }
         this.getSupportActionBar().setTitle(this.mTitle);
         this.setTitle(this.mTitle);
+        mNavigationDrawerFragment.setTitle(this.mTitle);
         editor.commit();
     }
 
@@ -186,6 +189,17 @@ public class MenueActivity extends AppCompatActivity
         }*/
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu){
+        this.mNavigationDrawerFragment.isDrawerOpen();
+        menu.findItem(R.id.action_context_bar).setVisible(true);
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    public void setToolBarTitle(String title){
+        mNavigationDrawerFragment.setTitle(title);
     }
 
     public void setDetails(Detail[] details) {

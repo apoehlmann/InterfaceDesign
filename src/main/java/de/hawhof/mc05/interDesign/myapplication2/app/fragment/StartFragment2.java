@@ -9,12 +9,16 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ExpandableListView;
 import android.widget.ListView;
+import android.widget.Toast;
 import de.hawhof.mc05.interDesign.myapplication2.app.MenueActivity;
 import de.hawhof.mc05.interDesign.myapplication2.app.R;
 import de.hawhof.mc05.interDesign.myapplication2.app.listViews.MenueExpandableAdapter;
 import de.hawhof.mc05.interDesign.myapplication2.app.listViews.Menue_ArrayAdapter;
+import de.hawhof.mc05.interDesign.myapplication2.app.model.Detail;
 import de.hawhof.mc05.interDesign.myapplication2.app.model.Menue;
+import de.hawhof.mc05.interDesign.myapplication2.app.model.SubMenue;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -28,6 +32,8 @@ public class StartFragment2 extends Fragment{
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
     private ExpandableListView listView;
+    private List<Menue> list;
+    private int selectItem = 0;
 
     /**
      * Returns a new instance of this fragment for the given section
@@ -36,6 +42,7 @@ public class StartFragment2 extends Fragment{
     public static StartFragment2 newInstance(int index) {
 
         StartFragment2 fragment = new StartFragment2();
+        fragment.setselectItem(index);
         Bundle args = new Bundle();
         args.putInt(ARG_SECTION_NUMBER, index);
         fragment.setArguments(args);
@@ -50,20 +57,42 @@ public class StartFragment2 extends Fragment{
         View rootView = inflater.inflate(R.layout.fragment_menue2, container, false);
         this.listView = (ExpandableListView) rootView.findViewById(R.id.expandableListView);
         Menue[] array = {new Menue(this.getResources().obtainTypedArray(R.array.Rezept),this.getContext()),new Menue(this.getResources().obtainTypedArray(R.array.KochBox),this.getContext()),new Menue(this.getResources().obtainTypedArray(R.array.Einzelprodukte),this.getContext())};
-        List<Menue> list = Arrays.asList(array);
+        this.list = Arrays.asList(array);
         MenueExpandableAdapter adapter = new MenueExpandableAdapter<Menue>(this.getContext(),list);
         adapter.notifyDataSetChanged();
         adapter.notifyDataSetInvalidated();
         listView.setAdapter(adapter);
         listView.invalidate();
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                selectItem(position);
+            public boolean onChildClick(ExpandableListView parent, View v,
+                                        int groupPosition, int childPosition, long id) {
+
+                list.get(groupPosition).getSubMenues().get(childPosition).getString(1);
+                Toast.makeText(getContext(),""+groupPosition+" " + childPosition, Toast.LENGTH_SHORT)
+                        .show();
+                //selectItem(new SubMenue(list.get(groupPosition).getSubMenues().get(childPosition),getActivity()));
+                return false;
             }
         });
-        //add
 
+        listView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+
+            @Override
+            public void onGroupExpand(int groupPosition) {
+                if(selectItem != 0)
+                    listView.collapseGroup(selectItem);
+                selectItem = groupPosition;
+                listView.setSelectedGroup(groupPosition);
+                listView.smoothScrollToPosition(groupPosition);
+                ((MenueActivity) getActivity()).setToolBarTitle(list.get(groupPosition).getTitle());
+            }
+        });
+
+        if(this.selectItem != 0)
+            listView.expandGroup(this.selectItem-1);
 
         return rootView;
     }
@@ -75,11 +104,15 @@ public class StartFragment2 extends Fragment{
                 getArguments().getInt(ARG_SECTION_NUMBER));
     }
 
-    private void selectItem(int position) {
-        if (listView != null) {
-            listView.setItemChecked(position, true);
-        }
+    private void selectItem(SubMenue subMenue ) {
+        Detail[] details = new Detail[subMenue.getSubMenues().get(0).length()];
+        for(int z = 0;z<details.length;z++)
+            details[z] = new Detail(this.getResources().obtainTypedArray(subMenue.getSubMenues().get(z).getResourceId(z,-8)));
+        ((MenueActivity) this.getActivity()).setDetails(details);
+        ((MenueActivity) this.getActivity()).onNavigationDrawerItemSelected(9);
+    }
 
-        ((MenueActivity)this.getActivity()).onNavigationDrawerItemSelected(position+1);
+    public void setselectItem(int selectItem) {
+        this.selectItem = selectItem;
     }
 }
