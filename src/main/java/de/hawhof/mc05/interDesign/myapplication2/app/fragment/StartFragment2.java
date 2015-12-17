@@ -73,7 +73,7 @@ public class StartFragment2 extends Fragment{
                 list.get(groupPosition).getSubMenues().get(childPosition).getString(1);
                 Toast.makeText(getContext(),""+groupPosition+" " + childPosition, Toast.LENGTH_SHORT)
                         .show();
-                //selectItem(new SubMenue(list.get(groupPosition).getSubMenues().get(childPosition),getActivity()));
+                selectItem(new SubMenue(list.get(groupPosition).getSubMenues().get(childPosition),getActivity()));
                 return false;
             }
         });

@@ -2,21 +2,16 @@ package de.hawhof.mc05.interDesign.myapplication2.app;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.support.v4.widget.DrawerLayout;
-import android.view.View;
-import android.widget.*;
-import com.google.gson.Gson;
 import de.hawhof.mc05.interDesign.myapplication2.app.Controller.StorageController;
 import de.hawhof.mc05.interDesign.myapplication2.app.fragment.*;
 import de.hawhof.mc05.interDesign.myapplication2.app.model.Detail;
-import de.hawhof.mc05.interDesign.myapplication2.app.model.ShoppingBasket;
 
 import java.io.IOException;
 
@@ -194,7 +189,7 @@ public class MenueActivity extends AppCompatActivity
     @Override
     public boolean onPrepareOptionsMenu(Menu menu){
         this.mNavigationDrawerFragment.isDrawerOpen();
-        menu.findItem(R.id.action_context_bar).setVisible(true);
+        //menu.findItem(R.id.action_context_bar).setVisible(true);
         return super.onPrepareOptionsMenu(menu);
     }
 
