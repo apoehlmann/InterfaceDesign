@@ -7,12 +7,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/menue2Image"
-            android:src="@android:drawable/picture_frame" android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"/>
+            android:src="@drawable/platzhalter"
+            android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Medium Text"
-            android:id="@+id/menue2Title" android:layout_below="@+id/menue2Image" android:layout_centerHorizontal="true"/>
+            android:id="@+id/menue2Title"
+            android:layout_below="@+id/menue2Image" android:layout_centerHorizontal="true"/>
 </RelativeLayout>
