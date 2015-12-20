@@ -44,7 +44,6 @@ public class MenueActivity extends AppCompatActivity
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
-        this.getSupportActionBar().setIcon(R.drawable.bag);
         this.getSupportActionBar().setDisplayUseLogoEnabled(true);
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         this.getSupportActionBar().setHomeButtonEnabled(false);
