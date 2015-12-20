@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent" android:background="#c1ff2711">
 
     <ImageView
             android:layout_width="wrap_content"
@@ -16,5 +16,11 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Medium Text"
             android:id="@+id/menue2Title"
-            android:layout_below="@+id/menue2Image" android:layout_centerHorizontal="true"/>
+            android:textColor="#090909" android:layout_alignBottom="@+id/menue2Image"
+            android:layout_centerHorizontal="true"/>
+    <Space
+            android:layout_width="20px"
+            android:layout_height="20px"
+            android:layout_below="@+id/menue2Title" android:layout_alignLeft="@+id/menue2Title"
+            android:layout_alignStart="@+id/menue2Title"/>
 </RelativeLayout>

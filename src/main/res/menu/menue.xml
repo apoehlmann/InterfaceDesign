@@ -5,5 +5,6 @@
     <item android:id="@+id/action_settings"
           android:title="Warenkorb"
           android:orderInCategory="100"
+          android:icon="@drawable/bag"
           app:showAsAction="withText|ifRoom"/>
 </menu>

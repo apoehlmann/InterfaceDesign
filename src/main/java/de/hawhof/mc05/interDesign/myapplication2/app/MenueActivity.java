@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 import de.hawhof.mc05.interDesign.myapplication2.app.Controller.StorageController;
 import de.hawhof.mc05.interDesign.myapplication2.app.fragment.*;
 import de.hawhof.mc05.interDesign.myapplication2.app.model.Detail;
@@ -43,6 +44,7 @@ public class MenueActivity extends AppCompatActivity
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
+        this.getSupportActionBar().setIcon(R.drawable.bag);
         this.getSupportActionBar().setDisplayUseLogoEnabled(true);
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         this.getSupportActionBar().setHomeButtonEnabled(false);
@@ -176,13 +178,14 @@ public class MenueActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if(id == R.id.action_settings)
+        if(id == R.id.action_settings) {
             this.onNavigationDrawerItemSelected(4);
-        //noinspection SimplifiableIfStatement
+            //noinspection SimplifiableIfStatement
         /*f (id == R.id.action_settings) {
             return true;
         }*/
-
+            Toast.makeText(this, "id:" + id, Toast.LENGTH_LONG).show();
+        }
         return super.onOptionsItemSelected(item);
     }
 
