@@ -1,26 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" android:background="#c1ff2711">
+                android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:background="#c1ff2711">
 
     <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/menue2Image"
             android:src="@drawable/platzhalter"
-            android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
+            android:scaleType="centerCrop" android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Medium Text"
+            android:fontFamily="fonts/Aller_Rg.ttf"
             android:id="@+id/menue2Title"
-            android:textColor="#090909" android:layout_alignBottom="@+id/menue2Image"
-            android:layout_centerHorizontal="true"/>
-    <Space
-            android:layout_width="20px"
-            android:layout_height="20px"
-            android:layout_below="@+id/menue2Title" android:layout_alignLeft="@+id/menue2Title"
-            android:layout_alignStart="@+id/menue2Title"/>
+            android:textColor="#090909"
+            android:layout_below="@+id/menue2Image" android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"/>
+    <SurfaceView
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:id="@+id/surfaceView"
+            android:background="#050505"
+            android:layout_below="@+id/menue2Title" android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" android:layout_marginTop="5dp"/>
+    <SurfaceView android:layout_width="fill_parent" android:layout_height="1dp" android:id="@+id/surfaceView2"
+                 android:background="#050505"
+                 android:layout_marginTop="3dp"
+                 android:layout_below="@+id/surfaceView" android:layout_centerHorizontal="true"/>
+    <SurfaceView android:layout_width="fill_parent" android:layout_height="1dp" android:id="@+id/surfaceView3"
+                 android:background="#050505"
+                 android:layout_marginTop="3dp" android:layout_below="@+id/surfaceView2"
+                 android:layout_centerHorizontal="true" android:layout_marginBottom="3dp"/>
 </RelativeLayout>

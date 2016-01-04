@@ -12,9 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import de.hawhof.mc05.interDesign.myapplication2.app.R;
 import de.hawhof.mc05.interDesign.myapplication2.app.model.Menue;
-import de.hawhof.mc05.interDesign.myapplication2.app.model.SubMenue;
 
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -147,6 +145,7 @@ public class MenueExpandableAdapter<T> extends BaseExpandableListAdapter {
             ImageView titleImage = (ImageView) rowView.findViewById(R.id.menue2Image);
             TextView titleText = (TextView) rowView.findViewById(R.id.menue2Title);
             titleText.setText(menue.getTitle());
+            titleImage.setImageDrawable(menue.getImage());
         }
         return rowView;
     }
@@ -179,6 +178,7 @@ public class MenueExpandableAdapter<T> extends BaseExpandableListAdapter {
             ImageView titleImage = (ImageView) rowView.findViewById(R.id.submenueimage);
             TextView titleText = (TextView) rowView.findViewById(R.id.submenuetext);
             titleText.setText(menue.getString(1));
+            titleImage.setImageDrawable(menue.getDrawable(2));
         }
         return rowView;
     }

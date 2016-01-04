@@ -6,21 +6,19 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import de.hawhof.mc05.interDesign.myapplication2.app.Controller.StorageController;
 import de.hawhof.mc05.interDesign.myapplication2.app.MenueActivity;
 import de.hawhof.mc05.interDesign.myapplication2.app.R;
-import de.hawhof.mc05.interDesign.myapplication2.app.listViews.Menue_ArrayAdapter;
-import de.hawhof.mc05.interDesign.myapplication2.app.model.Menue;
-import de.hawhof.mc05.interDesign.myapplication2.app.model.ShoppingBasket;
+import de.hawhof.mc05.interDesign.myapplication2.app.listViews.ShoppingBasket_ArrayAdapter;
+import de.hawhof.mc05.interDesign.myapplication2.app.model.BasketItem;
+import de.hawhof.mc05.interDesign.myapplication2.app.model.Detail;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -53,39 +51,8 @@ public class ShoppingBasketFragment  extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_basket, container, false);
-        this.listView = (ListView) rootView.findViewById(R.id.listView_menue);
-
-        try {
-            FileInputStream fos = new FileInputStream(StorageController.file);
-            ObjectInputStream ois = new ObjectInputStream(fos);
-            final ShoppingBasket shoppingBasket = (ShoppingBasket) ois.readObject();
-            if(shoppingBasket != null){
-               // shoppingBasket.getAllItems();
-            }else{
-
-            }
-            ois.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        /*Menue[] array = {new Menue(this.getResources().obtainTypedArray(R.array.Rezept),this.getContext()),new Menue(this.getResources().obtainTypedArray(R.array.KochBox),this.getContext()),new Menue(this.getResources().obtainTypedArray(R.array.Einzelprodukte),this.getContext())};
-        List<Menue> list = Arrays.asList(array);
-        Menue_ArrayAdapter adapter = new Menue_ArrayAdapter<Menue>(this.getContext(),R.layout.menue,list);
-        adapter.notifyDataSetChanged();
-        adapter.notifyDataSetInvalidated();
-        listView.setAdapter(adapter);*/
-        //listView.invalidate();
-        /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                selectItem(position);
-            }
-        });*/
-        //add
+        this.listView = (ListView) rootView.findViewById(R.id.listView_basket);
+        this.listView.setAdapter(new ShoppingBasket_ArrayAdapter<BasketItem>(this.getContext(),0,this.getBasket()));
         Button backBut = (Button) rootView.findViewById(R.id.back_button);
         backBut.setOnClickListener( new View.OnClickListener(){
 
@@ -100,6 +67,14 @@ public class ShoppingBasketFragment  extends Fragment {
             }
         });
         return rootView;
+    }
+
+    private List<BasketItem> getBasket() {
+        final List<BasketItem> list = new ArrayList<BasketItem>();
+        list.add(new BasketItem(new Detail(this.getResources().obtainTypedArray(R.array.Einzelpodukt1)),3));list.add(new BasketItem(new Detail(this.getResources().obtainTypedArray(R.array.Einzelpodukt2)),3));
+        list.add(new BasketItem(new Detail(this.getResources().obtainTypedArray(R.array.Einzelpodukt3)),5));list.add(new BasketItem(new Detail(this.getResources().obtainTypedArray(R.array.Einzelpodukt4)),2));
+        list.add(new BasketItem(new Detail(this.getResources().obtainTypedArray(R.array.Einzelpodukt5)),1));
+        return list;
     }
 
     @Override

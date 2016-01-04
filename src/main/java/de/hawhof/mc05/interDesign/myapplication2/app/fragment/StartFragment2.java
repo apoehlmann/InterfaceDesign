@@ -6,19 +6,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ExpandableListView;
-import android.widget.ListView;
-import android.widget.Toast;
 import de.hawhof.mc05.interDesign.myapplication2.app.MenueActivity;
 import de.hawhof.mc05.interDesign.myapplication2.app.R;
 import de.hawhof.mc05.interDesign.myapplication2.app.listViews.MenueExpandableAdapter;
-import de.hawhof.mc05.interDesign.myapplication2.app.listViews.Menue_ArrayAdapter;
 import de.hawhof.mc05.interDesign.myapplication2.app.model.Detail;
 import de.hawhof.mc05.interDesign.myapplication2.app.model.Menue;
 import de.hawhof.mc05.interDesign.myapplication2.app.model.SubMenue;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -71,8 +66,6 @@ public class StartFragment2 extends Fragment{
                                         int groupPosition, int childPosition, long id) {
 
                 list.get(groupPosition).getSubMenues().get(childPosition).getString(1);
-                Toast.makeText(getContext(),""+groupPosition+" " + childPosition, Toast.LENGTH_SHORT)
-                        .show();
                 selectItem(new SubMenue(list.get(groupPosition).getSubMenues().get(childPosition),getActivity()));
                 return false;
             }
@@ -86,7 +79,8 @@ public class StartFragment2 extends Fragment{
                     listView.collapseGroup(selectItem);
                 selectItem = groupPosition;
                 listView.setSelectedGroup(groupPosition);
-                listView.smoothScrollToPosition(groupPosition);
+               // listView.smoothScrollToPosition(groupPosition);
+                listView.smoothScrollBy(300,1000);
                 ((MenueActivity) getActivity()).setToolBarTitle(list.get(groupPosition).getTitle());
             }
         });
@@ -105,11 +99,14 @@ public class StartFragment2 extends Fragment{
     }
 
     private void selectItem(SubMenue subMenue ) {
+
         Detail[] details = new Detail[subMenue.getSubMenues().get(0).length()];
         for(int z = 0;z<details.length;z++)
             details[z] = new Detail(this.getResources().obtainTypedArray(subMenue.getSubMenues().get(z).getResourceId(z,-8)));
+        ((MenueActivity) this.getActivity()).setSubMenue(subMenue);
         ((MenueActivity) this.getActivity()).setDetails(details);
         ((MenueActivity) this.getActivity()).onNavigationDrawerItemSelected(9);
+        ((MenueActivity) this.getActivity()).setMyTitle(subMenue.getTitle());
     }
 
     public void setselectItem(int selectItem) {

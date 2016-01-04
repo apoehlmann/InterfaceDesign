@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#050505">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView"
+                android:src="@drawable/tra"
+                android:contentDescription="Image"
+                android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" android:scaleType="centerCrop"
+                android:paddingTop="50dp" />
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/btn_star_big_off"
+        app:layout_anchor="@id/app_bar"
+        app:backgroundTint="#c1ff2711"
+        app:layout_anchorGravity="bottom|start" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/shopping_basket_add"
+        app:backgroundTint="#c1ff2711"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|end" />
+
+    <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="de.hawhof.mc05.interDesign.myapplication2.app.fragment.ScrollingActivity"
+        tools:showIn="@layout/fragment_scrolling">
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:background="#c1ff2711">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="jnkjbkjbökkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+                android:fontFamily="fonts/Aller_Rg.ttf"
+                android:id="@+id/describe_view"
+                android:layout_below="@+id/surfaceView9" android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" android:background="#ffffff"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:id="@+id/imageButton"
+                android:fontFamily="fonts/Aller_Rg.ttf"
+                android:src="@drawable/shopping_basket_adds"
+                android:layout_below="@+id/surfaceView12" android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Small Text"
+                android:fontFamily="fonts/Aller_Rg.ttf"
+                android:id="@+id/priceView"
+                android:layout_marginRight="108dp"
+                android:layout_marginEnd="108dp"
+                android:layout_alignBottom="@+id/countProduct"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:inputType="numberSigned"
+                android:ems="10"
+                android:fontFamily="fonts/Aller_Rg.ttf"
+                android:id="@+id/countProduct"
+                android:nestedScrollingEnabled="false"
+                android:text="0"
+                android:layout_marginRight="36dp"
+                android:layout_marginEnd="36dp"
+                android:layout_below="@+id/surfaceView12"
+                android:layout_toLeftOf="@+id/priceView"
+                android:layout_toStartOf="@+id/priceView" />
+            <SurfaceView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:id="@+id/surfaceView9"
+                android:layout_alignParentStart="true" android:background="#050505" android:layout_below="@+id/surfaceView10"
+                android:layout_alignParentLeft="true" android:layout_marginTop="1dp"/>
+            <SurfaceView android:layout_width="fill_parent" android:layout_height="1dp" android:id="@+id/surfaceView10"
+                android:background="#050505"
+                android:layout_below="@+id/imageButton" android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" android:layout_marginTop="1dp"/>
+            <SurfaceView android:layout_width="fill_parent" android:layout_height="1dp" android:id="@+id/surfaceView11"
+                android:background="#050505" android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" android:layout_marginTop="1dp"/>
+            <SurfaceView android:layout_width="fill_parent" android:layout_height="1dp" android:id="@+id/surfaceView12"
+                android:background="#050505"
+                android:layout_below="@+id/surfaceView11" android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" android:layout_marginTop="1dp"/>
+            <SurfaceView android:layout_width="fill_parent" android:layout_height="1dp" android:id="@+id/surfaceView13"
+                android:background="#050505"
+                android:layout_below="@+id/describe_view" android:layout_centerHorizontal="true"/>
+            <SurfaceView android:layout_width="fill_parent" android:layout_height="1dp" android:id="@+id/surfaceView14"
+                android:background="#050505"
+                android:layout_below="@+id/surfaceView13" android:layout_centerHorizontal="true"
+                android:layout_marginTop="1dp"/>
+
+            <Space
+                android:layout_width="20px"
+                android:layout_height="80px"
+                android:layout_toStartOf="@+id/countProduct"
+                android:layout_below="@+id/surfaceView14"
+                android:layout_toLeftOf="@+id/countProduct"
+                android:id="@+id/space" />
+
+            <SurfaceView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:id="@+id/surfaceView16"
+                android:background="#050505"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="1dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+
+            <SurfaceView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:id="@+id/surfaceView17"
+                android:background="#050505"
+                android:layout_alignEnd="@+id/imageButton"
+                android:layout_above="@+id/surfaceView16"
+                android:layout_below="@+id/space"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+
+            <Space
+                android:layout_width="20px"
+                android:layout_height="80px"
+                android:layout_below="@+id/surfaceView14"
+                android:layout_toLeftOf="@+id/space"
+                android:layout_toStartOf="@+id/space" />
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -6,9 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import de.hawhof.mc05.interDesign.myapplication2.app.R;
+import de.hawhof.mc05.interDesign.myapplication2.app.model.BasketItem;
 
 import java.util.List;
 
@@ -37,11 +39,13 @@ public class ShoppingBasket_ArrayAdapter<T> extends ArrayAdapter<T> {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
         View rowView= inflater.inflate(R.layout.shoppingbasket_listitem, null, true);
         TextView txtTitle = (TextView) rowView.findViewById(R.id.item_title_basket);
+        EditText editText = (EditText) rowView.findViewById(R.id.baskettextfield_basket);
+        ImageView imageView = (ImageView) rowView.findViewById(R.id.imageView2);
 
-        ImageView imageView = (ImageView) rowView.findViewById(R.id.imgsidebar);
-        txtTitle.setText((CharSequence) this.getItem(position));
-
-        imageView.setImageResource(android.R.drawable.btn_star);
+        BasketItem basketItem = (BasketItem) this.getItem(position);
+        //imageView.setImageDrawable(basketItem.getImage());
+        txtTitle.setText(basketItem.getTitle());
+        editText.setText(""+basketItem.getCount());
         return rowView;
     }
 }

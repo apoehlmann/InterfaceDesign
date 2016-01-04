@@ -2,6 +2,7 @@ package de.hawhof.mc05.interDesign.myapplication2.app.model;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.widget.Toast;
 
 import java.io.Serializable;
@@ -13,10 +14,12 @@ import java.util.List;
  */
 public class Menue implements Serializable{
     private final String title;
+    private final Drawable titleImage;
     private List<TypedArray> listSub = new ArrayList<TypedArray>();
 
     public Menue(TypedArray typedArray, Context context) {
         this.title = typedArray.getString(1);
+        this.titleImage = typedArray.getDrawable(2);
         for(int z = 3;z<typedArray.length();z++) {
             final TypedArray array = context.getResources().obtainTypedArray(typedArray.getResourceId(z, -1));
             this.listSub.add(array);
@@ -29,5 +32,9 @@ public class Menue implements Serializable{
 
     public List<TypedArray> getSubMenues(){
         return this.listSub;
+    }
+
+    public Drawable getImage() {
+        return this.titleImage;
     }
 }

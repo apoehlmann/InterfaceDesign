@@ -10,9 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
-import de.hawhof.mc05.interDesign.myapplication2.app.Controller.StorageController;
 import de.hawhof.mc05.interDesign.myapplication2.app.fragment.*;
 import de.hawhof.mc05.interDesign.myapplication2.app.model.Detail;
+import de.hawhof.mc05.interDesign.myapplication2.app.model.SubMenue;
 
 import java.io.IOException;
 
@@ -35,6 +35,7 @@ public class MenueActivity extends AppCompatActivity
     private CharSequence mTitle;
     private Detail[] details;
     private Detail detail;
+    private SubMenue subMenue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,13 +49,6 @@ public class MenueActivity extends AppCompatActivity
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         this.getSupportActionBar().setHomeButtonEnabled(false);
         this.getSupportActionBar().invalidateOptionsMenu();
-        try {
-            StorageController.file.mkdirs();
-            StorageController.file.createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
@@ -66,7 +60,6 @@ public class MenueActivity extends AppCompatActivity
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, StartFragment2.newInstance(MenueActivity.START)).commit();
        // getSupportFragmentManager().beginTransaction().replace(R.id.container, StartFragment.newInstance(MenueActivity.START)).commit();
-
     }
 
     @Override
@@ -144,9 +137,7 @@ public class MenueActivity extends AppCompatActivity
             default:
 
         }
-        this.getSupportActionBar().setTitle(this.mTitle);
-        this.setTitle(this.mTitle);
-        mNavigationDrawerFragment.setTitle(this.mTitle);
+        this.setMyTitle(this.mTitle.toString());
         editor.commit();
     }
 
@@ -217,10 +208,22 @@ public class MenueActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed(){
+
         if(getSupportFragmentManager().getBackStackEntryCount() == 0){
             this.finish();
         }else{
             getSupportFragmentManager().popBackStack();
         }
+    }
+
+    public void setMyTitle(String title){
+        this.mTitle = title;
+        this.getSupportActionBar().setTitle(this.mTitle);
+        this.setTitle(this.mTitle);
+        mNavigationDrawerFragment.setTitle(this.mTitle);
+    }
+
+    public void setSubMenue(SubMenue subMenue) {
+        this.subMenue = subMenue;
     }
 }

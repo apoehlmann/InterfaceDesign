@@ -1,5 +1,7 @@
 package de.hawhof.mc05.interDesign.myapplication2.app.model;
 
+import android.graphics.drawable.Drawable;
+
 import java.io.Serializable;
 
 /**
@@ -33,5 +35,13 @@ public class BasketItem implements Serializable {
 
     public void setcount(int count) {
         this.count = count;
+    }
+
+    public Drawable getImage() {
+        return this.detail.getImage();
+    }
+
+    public CharSequence getTitle() {
+        return this.detail.getTitle();
     }
 }

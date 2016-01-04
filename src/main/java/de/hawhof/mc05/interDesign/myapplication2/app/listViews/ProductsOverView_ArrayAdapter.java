@@ -40,7 +40,7 @@ public class ProductsOverView_ArrayAdapter<T> extends ArrayAdapter<T> {
         Detail detail = (Detail) this.getItem(position);
         txtTitle.setText(detail.getTitle());
         priTitle.setText(detail.getPriceString());
-        //imageView.setImageResource(android.R.drawable.btn_star);
+        imageView.setImageDrawable(detail.getImage());
         return rowView;
     }
 }

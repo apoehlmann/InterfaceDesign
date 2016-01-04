@@ -1,6 +1,5 @@
 package de.hawhof.mc05.interDesign.myapplication2.app.fragment;
 
-import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -52,7 +51,7 @@ public class ProductsOverViewFragment extends Fragment {
 
         SharedPreferences sharedPref = this.getActivity().getPreferences(Context.MODE_PRIVATE);
 
-        ProductsOverView_ArrayAdapter adapter = new ProductsOverView_ArrayAdapter<Detail>(this.getContext(), R.layout.menue, Arrays.asList(((MenueActivity) this.getActivity()).getDetails()));
+        ProductsOverView_ArrayAdapter adapter = new ProductsOverView_ArrayAdapter<Detail>(this.getContext(), R.layout.menue2, Arrays.asList(((MenueActivity) this.getActivity()).getDetails()));
         adapter.notifyDataSetChanged();
         adapter.notifyDataSetInvalidated();
         listView.setAdapter(adapter);
@@ -65,14 +64,6 @@ public class ProductsOverViewFragment extends Fragment {
         });
         //add
         return rootView;
-    }
-
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        //((MenueActivity) activity).onSectionAttached(
-               // getArguments().getInt(ARG_SECTION_NUMBER));
     }
 
     private void selectItem(int position) {

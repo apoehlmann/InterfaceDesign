@@ -53,4 +53,8 @@ public class Detail implements Serializable{
     public String getType() {
         return this.einheit;
     }
+
+    public Drawable getImage() {
+        return this.image;
+    }
 }

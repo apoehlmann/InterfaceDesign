@@ -1,26 +1,17 @@
 package de.hawhof.mc05.interDesign.myapplication2.app.fragment;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TextView;
-import android.widget.Toast;
-import com.google.gson.Gson;
-import de.hawhof.mc05.interDesign.myapplication2.app.Controller.StorageController;
+import android.widget.*;
 import de.hawhof.mc05.interDesign.myapplication2.app.MenueActivity;
 import de.hawhof.mc05.interDesign.myapplication2.app.R;
 import de.hawhof.mc05.interDesign.myapplication2.app.model.Detail;
-import de.hawhof.mc05.interDesign.myapplication2.app.model.ShoppingBasket;
-
-import java.io.*;
 
 /**
  * Created by alex on 03.12.15.
@@ -32,10 +23,9 @@ public class DetailFragment extends Fragment {
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
     private Detail detail;
-    private ImageButton imageButton;
+    private FloatingActionButton imageButton;
     private boolean isSelect;
     private EditText editText;
-    private ShoppingBasket shoppingBasket = null;
 
     /**
      * Returns a new instance of this fragment for the given section
@@ -49,57 +39,29 @@ public class DetailFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+
     public DetailFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_detail, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_scrolling, container, false);
         this.detail = ((MenueActivity) this.getActivity()).getDetail();
 
-
-        final TextView titleView = (TextView) rootView.findViewById(R.id.detail_title);
         final TextView describeView = (TextView) rootView.findViewById(R.id.describe_view);
         final TextView priceView = (TextView) rootView.findViewById(R.id.priceView);
+        final ImageView titleImageView = (ImageView) rootView.findViewById(R.id.imageView);
         this.editText = (EditText) rootView.findViewById(R.id.countProduct);
-        this.imageButton = (ImageButton) rootView.findViewById(R.id.favorite);
-        try {
-            FileInputStream fos = new FileInputStream(StorageController.file);//this.getActivity().openFileInput(StorageController.file);
-            ObjectInputStream ois = new ObjectInputStream(fos);
-            this.shoppingBasket = (ShoppingBasket) ois.readObject();
-            ois.close();
+        this.imageButton = (FloatingActionButton) rootView.findViewById(R.id.fab1);
 
-            if(shoppingBasket != null){
-                if(shoppingBasket.findItem(this.detail) != null){
-                    this.isSelect = shoppingBasket.findItem(this.detail).getIsFav();
-                    if(isSelect)
-                        imageButton.setImageResource(android.R.drawable.btn_star_big_on);
-                    else
-                        imageButton.setImageResource(android.R.drawable.btn_star_big_off);
-                    this.editText.setText(""+shoppingBasket.findItem(this.detail).getCount());
-                }else{
-                    this.isSelect = false;
-                    if(isSelect)
-                        imageButton.setImageResource(android.R.drawable.btn_star_big_on);
-                    else
-                        imageButton.setImageResource(android.R.drawable.btn_star_big_off);
-                    this.editText.setText("0");
-                }
-            }else{
-                this.isSelect = false;
-                if(!isSelect)
-                    imageButton.setImageResource(android.R.drawable.btn_star_big_on);
-                else
-                    imageButton.setImageResource(android.R.drawable.btn_star_big_off);
-                this.editText.setText("0");
-            }
-        } catch (Exception e){
-            e.printStackTrace();
-            this.shoppingBasket = new ShoppingBasket();
-        }
-
-        titleView.setText(this.detail.getTitle());
+        this.isSelect = false;
+        if (isSelect)
+            imageButton.setImageResource(android.R.drawable.btn_star_big_on);
+        else
+            imageButton.setImageResource(android.R.drawable.btn_star_big_off);
+        ((MenueActivity) this.getActivity()).getSupportActionBar().setTitle(this.detail.getTitle());
+        titleImageView.setImageDrawable(this.detail.getImage());
         describeView.setText(this.detail.getDes());
         describeView.setMovementMethod(new ScrollingMovementMethod());
         priceView.setText(this.detail.getPriceString());
@@ -113,7 +75,7 @@ public class DetailFragment extends Fragment {
              */
             @Override
             public void onClick(View v) {
-                if(!isSelect)
+                if (!isSelect)
                     imageButton.setImageResource(android.R.drawable.btn_star_big_on);
                 else
                     imageButton.setImageResource(android.R.drawable.btn_star_big_off);
@@ -121,7 +83,7 @@ public class DetailFragment extends Fragment {
             }
         });
 
-        ((ImageButton)rootView.findViewById(R.id.imageButton)).setOnClickListener(new View.OnClickListener() {
+        ((FloatingActionButton) rootView.findViewById(R.id.fab2)).setOnClickListener(new View.OnClickListener() {
             /**
              * Called when a view has been clicked.
              *
@@ -129,7 +91,7 @@ public class DetailFragment extends Fragment {
              */
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(),"Es wurden "+editText.getText()+" "+detail.getType()+" "+detail.getTitle()+" hinzugefügt",Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), "Es wurden " + editText.getText() + " " + detail.getType() + " " + detail.getTitle() + " hinzugefügt", Toast.LENGTH_LONG).show();
             }
         });
         return rootView;
@@ -140,24 +102,6 @@ public class DetailFragment extends Fragment {
         super.onAttach(activity);
         ((MenueActivity) activity).onSectionAttached(
                 getArguments().getInt(ARG_SECTION_NUMBER));
-    }
-
-    @Override
-    public void onPause(){
-
-        try {
-            FileOutputStream fos = new FileOutputStream(StorageController.file);//this.getActivity().openFileOutput(StorageController.file,Context.MODE_APPEND);
-            ObjectOutputStream ois = new ObjectOutputStream(fos);
-            this.shoppingBasket.updateItem(this.detail,new Integer(String.valueOf(this.editText.getText())));
-            this.shoppingBasket.setFav(this.detail,this.isSelect);
-            ois.writeObject(this.shoppingBasket);
-            ois.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        super.onPause();
     }
 }
 
