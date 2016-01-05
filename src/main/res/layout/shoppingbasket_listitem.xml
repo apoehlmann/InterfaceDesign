@@ -10,33 +10,37 @@
             android:text="Large Text"
             android:id="@+id/item_title_basket"
             android:fontFamily="fonts/Aller_Rg.ttf"
-            android:layout_marginTop="33dp" android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/imageView2" android:layout_toEndOf="@+id/imageView2"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="26dp"
+            android:layout_marginStart="26dp"
+            android:layout_alignParentTop="true" android:layout_toRightOf="@+id/imageView2"
+            android:layout_toEndOf="@+id/imageView2" android:layout_marginBottom="10dp"
+            android:layout_centerVertical="true"/>
     <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:id="@+id/delete_basket"
             android:src="@android:drawable/ic_delete"
-            android:layout_marginRight="18dp" android:layout_marginEnd="18dp"
-            android:layout_alignBottom="@+id/item_title_basket" android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/item_title_basket" android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"/>
     <EditText
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:inputType="numberSigned"
             android:ems="10"
+            android:gravity="center"
+            android:text="0"
             android:fontFamily="fonts/Aller_Rg.ttf"
             android:id="@+id/baskettextfield_basket"
-            android:layout_marginRight="24dp"
-            android:layout_marginEnd="24dp" android:background="#ffffff"
-            android:layout_alignTop="@+id/item_title_basket" android:layout_toLeftOf="@+id/delete_basket"
+            android:background="#ff6e61"
+            android:layout_alignBottom="@+id/item_title_basket" android:layout_toLeftOf="@+id/delete_basket"
             android:layout_toStartOf="@+id/delete_basket"/>
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView2"
             android:src="@mipmap/ic_launcher"
-            android:layout_alignBottom="@+id/baskettextfield_basket" android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"/>
     <SurfaceView
             android:layout_width="fill_parent"
@@ -48,4 +52,12 @@
     <SurfaceView android:layout_width="fill_parent" android:layout_height="1dp" android:id="@+id/surfaceView15"
                  android:background="#070707" android:layout_below="@+id/surfaceView7"
                  android:layout_centerHorizontal="true" android:layout_marginTop="1dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="price"
+            android:id="@+id/priceBasketView" android:layout_alignTop="@+id/baskettextfield_basket"
+            android:layout_toLeftOf="@+id/baskettextfield_basket"
+            android:layout_toStartOf="@+id/baskettextfield_basket" android:layout_marginRight="5dp"/>
 </RelativeLayout>

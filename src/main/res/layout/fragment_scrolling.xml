@@ -70,7 +70,7 @@
                 android:fontFamily="fonts/Aller_Rg.ttf"
                 android:id="@+id/describe_view"
                 android:layout_below="@+id/surfaceView9" android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" android:background="#ffffff"/>
+                android:layout_alignParentStart="true" android:background="#ff6e61"/>
             <ImageButton
                 android:layout_width="0dp"
                 android:layout_height="60dp"
@@ -80,32 +80,28 @@
                 android:layout_below="@+id/surfaceView12" android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Small Text"
-                android:fontFamily="fonts/Aller_Rg.ttf"
-                android:id="@+id/priceView"
-                android:layout_marginRight="108dp"
-                android:layout_marginEnd="108dp"
-                android:layout_alignBottom="@+id/countProduct"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Small Text"
+                    android:fontFamily="fonts/Aller_Rg.ttf"
+                    android:id="@+id/priceView"
+                    android:layout_below="@+id/surfaceView12" android:layout_toRightOf="@+id/textView"
+                    android:layout_toEndOf="@+id/textView" android:layout_marginTop="20dp"/>
 
             <EditText
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned"
-                android:ems="10"
-                android:fontFamily="fonts/Aller_Rg.ttf"
-                android:id="@+id/countProduct"
-                android:nestedScrollingEnabled="false"
-                android:text="0"
-                android:layout_marginRight="36dp"
-                android:layout_marginEnd="36dp"
-                android:layout_below="@+id/surfaceView12"
-                android:layout_toLeftOf="@+id/priceView"
-                android:layout_toStartOf="@+id/priceView" />
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberSigned"
+                    android:ems="10"
+                    android:fontFamily="fonts/Aller_Rg.ttf"
+                    android:id="@+id/countProduct"
+                    android:nestedScrollingEnabled="false"
+                    android:text="1"
+                    android:textIsSelectable="true"
+                    android:layout_below="@+id/surfaceView12" android:layout_alignRight="@+id/textView"
+                    android:layout_alignEnd="@+id/textView" android:layout_marginRight="20dp"
+                    android:layout_marginEnd="45dp" android:layout_marginTop="10dp"/>
             <SurfaceView
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
@@ -133,45 +129,43 @@
 
             <Space
                 android:layout_width="20px"
-                android:layout_height="80px"
-                android:layout_toStartOf="@+id/countProduct"
-                android:layout_below="@+id/surfaceView14"
-                android:layout_toLeftOf="@+id/countProduct"
-                android:id="@+id/space" />
-
-            <SurfaceView
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:id="@+id/surfaceView16"
-                android:background="#050505"
-                android:layout_alignParentBottom="true"
+                android:layout_height="300px"
+                android:id="@+id/space"
+                android:layout_below="@+id/surfaceView13"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="1dp"
-                android:layout_marginBottom="1dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp" />
+                android:layout_alignParentStart="true" />
 
             <SurfaceView
                 android:layout_width="fill_parent"
-                android:layout_height="1dp"
+                android:layout_height="2dp"
                 android:id="@+id/surfaceView17"
                 android:background="#050505"
-                android:layout_alignEnd="@+id/imageButton"
-                android:layout_above="@+id/surfaceView16"
-                android:layout_below="@+id/space"
-                android:layout_marginLeft="1dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
                 android:paddingTop="5dp"
-                android:paddingBottom="5dp" />
+                android:paddingBottom="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="1dp"
+                android:layout_below="@+id/surfaceView14" />
 
-            <Space
-                android:layout_width="20px"
-                android:layout_height="80px"
-                android:layout_below="@+id/surfaceView14"
-                android:layout_toLeftOf="@+id/space"
-                android:layout_toStartOf="@+id/space" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView3"
+                android:src="@drawable/test"
+                android:scaleType="centerInside"
+                android:layout_below="@+id/surfaceView17"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Produktvorschläge"
+                android:id="@+id/textView"
+                android:layout_below="@+id/surfaceView17"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
         </RelativeLayout>
 
     </android.support.v4.widget.NestedScrollView>

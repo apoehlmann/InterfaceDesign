@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import de.hawhof.mc05.interDesign.myapplication2.app.R;
 
@@ -37,7 +38,8 @@ public class Sidebar_ArrayAdapter<T> extends ArrayAdapter<T> {
         View rowView= inflater.inflate(R.layout.sidebar, null, true);
         TextView txtTitle = (TextView) rowView.findViewById(R.id.textsidebar);
         txtTitle.setText((CharSequence) this.getItem(position));
-
+        ImageView img = (ImageView) rowView.findViewById(R.id.imgsidebar);
+        img.setImageDrawable(this.getContext().getResources().obtainTypedArray(R.array.iconsSideBar).getDrawable(position));
         TextView textView = (TextView) rowView.findViewById(R.id.baskettextfield_basket);
         return rowView;
     }

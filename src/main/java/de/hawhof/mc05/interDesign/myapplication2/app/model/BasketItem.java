@@ -44,4 +44,12 @@ public class BasketItem implements Serializable {
     public CharSequence getTitle() {
         return this.detail.getTitle();
     }
+
+    public float getPrice() {
+        return this.detail.getPrice();
+    }
+
+    public String getFullPrice() {
+        return this.getPrice()*this.getCount() + "€";
+    }
 }

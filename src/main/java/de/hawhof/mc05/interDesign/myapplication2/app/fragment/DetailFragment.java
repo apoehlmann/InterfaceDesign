@@ -64,7 +64,7 @@ public class DetailFragment extends Fragment {
         titleImageView.setImageDrawable(this.detail.getImage());
         describeView.setText(this.detail.getDes());
         describeView.setMovementMethod(new ScrollingMovementMethod());
-        priceView.setText(this.detail.getPriceString());
+        priceView.setText(this.detail.getPriceString() +" pro "+this.detail.getType());
 
 
         this.imageButton.setOnClickListener(new View.OnClickListener() {

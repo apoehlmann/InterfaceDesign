@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <array name="iconsSideBar">
+        <item>@drawable/logos</item>
+        <item>@drawable/rezepts</item>
+        <item>@drawable/kochboxs</item>
+        <item>@drawable/einzels</item>
+        <item>@drawable/shopping_basket_add</item>
+        <item>@drawable/logos</item>
+        <item>@drawable/logos</item>
+        <item>@drawable/logos</item>
+    </array>
+
     <array name="Start">
         <item>0</item>
+        <item>@array/Einzelprodukte</item>
         <item>@array/Rezept</item>
         <item>@array/KochBox</item>
-        <item>@array/Einzelprodukte</item>
     </array>
 
     <array name="Rezept">
@@ -55,7 +66,6 @@
         <item>@array/Rezept1</item>
         <item>@array/Rezept2</item>
         <item>@array/Rezept3</item>
-        <item>@array/Rezept4</item>
     </array>
 
     <array name="LaenderWochenBox">
@@ -220,23 +230,32 @@
     </array>
 
     <array name="Rezept1">
-        <item>Rezept1</item>
-        <item>Spagetti</item>
-        <item>@drawable/platzhalter</item>
+        <item>Rezept1</item>Quelle http://www.chefkoch.de/rezepte/889601194503872/Knusprig-duenne-Pizza-mit-Chorizo-und-Mozzarella.html
+        <item>Pizza mit Chorizo</item>
+        <item>@drawable/pizza</item>
         <item><h1>Kurzbeschreibung</h1>\n\&amp;#8226</item>
-        <item>@string/blindText</item>//Beschreibung
-        <item>1.0</item>
+        <item>@string/pizzaZ</item>//Beschreibung
+        <item>1.00</item>
+        <item>Portion</item>//Einheit
+    </array>
+
+    <array name="Rezept2">
+        <item>Rezept2</item>http://www.chefkoch.de/rezepte/1450241249908501/Gefuelltes-Rinderfilet-mediterran.html
+        <item>Gefülltes Rinderfilet</item>
+        <item>@drawable/rind</item>
+        <item>Kurzbeschreibung</item>
+        <item>@string/rind</item>//Beschreibung
+        <item>1.00</item>
         <item>Portion</item>//Einheit
 
     </array>
-
     <array name="Rezept3">
-        <item>Rezept3</item>
-        <item>Pizza de Mare</item>
-        <item>@drawable/platzhalter</item>
+        <item>Rezept3</item>http://www.chefkoch.de/rezepte/1518811257110128/Antipasti.html
+        <item>Antipasti</item>
+        <item>@drawable/antipasti</item>
         <item>Kurzbeschreibung</item>
-        <item>@string/blindText</item>//Beschreibung
-        <item>1.0</item>
+        <item>@string/antipasti</item>//Beschreibung
+        <item>1.00</item>
         <item>Portion</item>//Einheit
 
     </array>
@@ -420,17 +439,6 @@
     <array name="Rezept20">
         <item>Rezept20</item>
         <item>RezeptTitle20</item>
-        <item>@drawable/platzhalter</item>
-        <item>Kurzbeschreibung</item>
-        <item>@string/blindText</item>//Beschreibung
-        <item>1.0</item>
-        <item>Portion</item>//Einheit
-
-    </array>
-
-    <array name="Rezept2">
-        <item>Rezept2</item>
-        <item>Pizzabrot</item>
         <item>@drawable/platzhalter</item>
         <item>Kurzbeschreibung</item>
         <item>@string/blindText</item>//Beschreibung

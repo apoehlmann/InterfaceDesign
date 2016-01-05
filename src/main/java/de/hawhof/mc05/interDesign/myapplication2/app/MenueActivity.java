@@ -64,7 +64,6 @@ public class MenueActivity extends AppCompatActivity
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
-        // update the main content by replacing fragments
         Fragment fragment = null;
         if(position == MenueActivity.START){
             fragment = StartFragment2.newInstance(MenueActivity.START);
@@ -208,7 +207,6 @@ public class MenueActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed(){
-
         if(getSupportFragmentManager().getBackStackEntryCount() == 0){
             this.finish();
         }else{

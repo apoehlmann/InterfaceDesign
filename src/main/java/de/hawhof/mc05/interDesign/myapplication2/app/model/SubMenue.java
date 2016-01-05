@@ -30,7 +30,7 @@ public class SubMenue {
         this.activity = activity;
         this.typedArray = typedArray;
 
-        TypedArray array = activity.getResources().obtainTypedArray(typedArray.getResourceId(activity.getPreferences(Context.MODE_PRIVATE).getInt("TYPE",3),3));//;
+        TypedArray array = activity.getResources().obtainTypedArray(typedArray.getResourceId(activity.getSharedPreferences("", Context.MODE_PRIVATE).getInt("TYPE",3),3));//;
         Log.i(this.getClass().toString(),this.title+"-Länge es Arrays:"+array.length()+"-"+activity.getPreferences(Context.MODE_PRIVATE).getInt("TYPE",3));
         for(int z = 0;z<array.length();z++) {
             Log.d(this.getClass().toString(),""+z);

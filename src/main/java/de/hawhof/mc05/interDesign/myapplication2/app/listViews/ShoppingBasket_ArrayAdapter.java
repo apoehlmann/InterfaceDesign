@@ -40,12 +40,14 @@ public class ShoppingBasket_ArrayAdapter<T> extends ArrayAdapter<T> {
         View rowView= inflater.inflate(R.layout.shoppingbasket_listitem, null, true);
         TextView txtTitle = (TextView) rowView.findViewById(R.id.item_title_basket);
         EditText editText = (EditText) rowView.findViewById(R.id.baskettextfield_basket);
+        TextView price = (TextView) rowView.findViewById(R.id.priceBasketView);
         ImageView imageView = (ImageView) rowView.findViewById(R.id.imageView2);
 
         BasketItem basketItem = (BasketItem) this.getItem(position);
         //imageView.setImageDrawable(basketItem.getImage());
         txtTitle.setText(basketItem.getTitle());
         editText.setText(""+basketItem.getCount());
+        price.setText(basketItem.getFullPrice());
         return rowView;
     }
 }

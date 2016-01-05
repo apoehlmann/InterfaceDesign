@@ -57,4 +57,8 @@ public class Detail implements Serializable{
     public Drawable getImage() {
         return this.image;
     }
+
+    public float getPrice() {
+        return price;
+    }
 }

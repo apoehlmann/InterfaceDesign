@@ -1,12 +1,17 @@
 package de.hawhof.mc05.interDesign.myapplication2.app.fragment;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
+
 import de.hawhof.mc05.interDesign.myapplication2.app.MenueActivity;
 import de.hawhof.mc05.interDesign.myapplication2.app.R;
 import de.hawhof.mc05.interDesign.myapplication2.app.listViews.MenueExpandableAdapter;
@@ -64,9 +69,14 @@ public class StartFragment2 extends Fragment{
             @Override
             public boolean onChildClick(ExpandableListView parent, View v,
                                         int groupPosition, int childPosition, long id) {
-
-                list.get(groupPosition).getSubMenues().get(childPosition).getString(1);
-                selectItem(new SubMenue(list.get(groupPosition).getSubMenues().get(childPosition),getActivity()));
+                SharedPreferences settings = getActivity().getSharedPreferences("", Context.MODE_PRIVATE);
+                SharedPreferences.Editor prefEditor = settings.edit();
+                prefEditor.putInt("TYPE", groupPosition+3);
+                Toast.makeText(getContext(), String.valueOf(settings.getInt("TYPE", 5)), Toast.LENGTH_LONG).show();
+                prefEditor.commit();
+                Log.d(this.getClass().toString(), "" + groupPosition + " " + childPosition);
+                Toast.makeText(getContext(),list.get(groupPosition).getSubMenues().get(childPosition).getText(2),Toast.LENGTH_LONG).show();
+                selectItem(new SubMenue(list.get(groupPosition).getSubMenues().get(childPosition), getActivity()));
                 return false;
             }
         });
@@ -75,6 +85,7 @@ public class StartFragment2 extends Fragment{
 
             @Override
             public void onGroupExpand(int groupPosition) {
+
                 if(selectItem != 0)
                     listView.collapseGroup(selectItem);
                 selectItem = groupPosition;

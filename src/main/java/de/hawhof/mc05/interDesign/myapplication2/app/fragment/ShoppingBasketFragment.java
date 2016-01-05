@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import de.hawhof.mc05.interDesign.myapplication2.app.MenueActivity;
 import de.hawhof.mc05.interDesign.myapplication2.app.R;
 import de.hawhof.mc05.interDesign.myapplication2.app.listViews.ShoppingBasket_ArrayAdapter;
@@ -66,7 +67,17 @@ public class ShoppingBasketFragment  extends Fragment {
                 getFragmentManager().popBackStack();
             }
         });
+
+        final TextView erg = (TextView) rootView.findViewById(R.id.erg);
+        erg.setText(this.createErg(this.getBasket()));
         return rootView;
+    }
+
+    private CharSequence createErg(final List<BasketItem> basket) {
+        double erg = 0.0;
+        for(BasketItem item : basket)
+            erg += item.getCount()*item.getPrice();
+        return "Rechnungsbetrag: "+erg+"€";
     }
 
     private List<BasketItem> getBasket() {
