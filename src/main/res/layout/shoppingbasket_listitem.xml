@@ -36,12 +36,12 @@
             android:layout_alignBottom="@+id/item_title_basket" android:layout_toLeftOf="@+id/delete_basket"
             android:layout_toStartOf="@+id/delete_basket"/>
     <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:id="@+id/imageView2"
             android:src="@mipmap/ic_launcher"
             android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"/>
+            android:layout_alignParentStart="true" android:layout_marginLeft="5dp"/>
     <SurfaceView
             android:layout_width="fill_parent"
             android:layout_height="1dp"

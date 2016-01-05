@@ -44,7 +44,7 @@ public class ShoppingBasket_ArrayAdapter<T> extends ArrayAdapter<T> {
         ImageView imageView = (ImageView) rowView.findViewById(R.id.imageView2);
 
         BasketItem basketItem = (BasketItem) this.getItem(position);
-        //imageView.setImageDrawable(basketItem.getImage());
+        imageView.setImageDrawable(basketItem.getImage());
         txtTitle.setText(basketItem.getTitle());
         editText.setText(""+basketItem.getCount());
         price.setText(basketItem.getFullPrice());
