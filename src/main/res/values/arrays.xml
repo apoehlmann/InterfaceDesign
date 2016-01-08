@@ -3,10 +3,10 @@
 
     <array name="iconsSideBar">
         <item>@drawable/logos</item>
+        <item>@drawable/einzels</item>
         <item>@drawable/rezepts</item>
         <item>@drawable/kochboxs</item>
-        <item>@drawable/einzels</item>
-        <item>@drawable/shopping_basket_add</item>
+        <item>@drawable/logos</item>
         <item>@drawable/logos</item>
         <item>@drawable/logos</item>
         <item>@drawable/logos</item>
@@ -232,7 +232,7 @@
 
     <array name="Rezept1">
         <item>Rezept1</item>Quelle http://www.chefkoch.de/rezepte/889601194503872/Knusprig-duenne-Pizza-mit-Chorizo-und-Mozzarella.html
-        <item>Pizza mit Chorizo</item>
+        <item>Pizza Chorizo</item>
         <item>@drawable/pizza</item>
         <item><h1>Kurzbeschreibung</h1>\n\&amp;#8226</item>
         <item>@string/pizzaZ</item>//Beschreibung
@@ -242,7 +242,7 @@
 
     <array name="Rezept2">
         <item>Rezept2</item>http://www.chefkoch.de/rezepte/1450241249908501/Gefuelltes-Rinderfilet-mediterran.html
-        <item>Gefülltes Rinderfilet</item>
+        <item>Rinderfilet</item>
         <item>@drawable/rind</item>
         <item>Kurzbeschreibung</item>
         <item>@string/rind</item>//Beschreibung
@@ -256,7 +256,7 @@
         <item>@drawable/antipasti</item>
         <item>Kurzbeschreibung</item>
         <item>@string/antipasti</item>//Beschreibung
-        <item>1.99</item>
+        <item>2.22</item>
         <item>Portion</item>//Einheit
 
     </array>

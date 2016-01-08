@@ -2,9 +2,9 @@
     <string name="app_name">Groceries Online</string>
 
     <string name="title_section1">Startseite</string>
+    <string name="title_section4">Einzelprodukte</string>
     <string name="title_section2">Rezepte</string>
     <string name="title_section3">Wochenpakete</string>
-    <string name="title_section4">Einzelprodukte</string>
     <string name="title_section5">Warenkorb</string>
     <string name="title_section6">Konto</string>
     <string name="title_section7">Favoriten</string>

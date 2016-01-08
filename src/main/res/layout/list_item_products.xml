@@ -16,7 +16,7 @@
             android:fontFamily="fonts/Aller_Rg.ttf"
             android:id="@+id/name_textview"
             android:layout_below="@+id/product_imageview"
-            android:textColor="#ffffff"/>
+            android:textColor="#ffffff" android:layout_marginLeft="10dp"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
             android:fontFamily="fonts/Aller_Rg.ttf"
             android:id="@+id/price_textview"
             android:layout_alignBottom="@+id/name_textview" android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" android:textColor="#ffffff"/>
+            android:layout_alignParentEnd="true" android:textColor="#ffffff" android:layout_marginRight="10dp"/>
     <SurfaceView
             android:layout_width="fill_parent"
             android:layout_height="1dp"

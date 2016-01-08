@@ -8,30 +8,24 @@
             android:layout_height="wrap_content"
             android:text="Kaufen"
             android:fontFamily="fonts/Aller_Rg.ttf"
-            android:id="@+id/basket_buy" android:layout_alignParentBottom="true" android:layout_alignParentRight="true"
+            android:id="@+id/basket_buy"
+            android:layout_alignParentBottom="true" android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"/>
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Zurück"
-            android:id="@+id/back_button"
-            android:fontFamily="fonts/Aller_Rg.ttf"
-            android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"/>
     <ListView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/listView_basket"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" android:choiceMode="none"
-            android:layout_alignParentTop="true" android:layout_above="@+id/erg"/>
+            android:layout_alignParentTop="true" android:layout_above="@+id/surfaceView18"
+            android:layout_alignParentBottom="false" android:layout_alignParentRight="true" android:minHeight="200dp"/>
     <SurfaceView
             android:layout_width="fill_parent"
             android:layout_height="1dp"
             android:id="@+id/surfaceView16"
             android:background="#ffffff"
-            android:layout_above="@+id/basket_buy" android:layout_alignRight="@+id/basket_buy"
-            android:layout_alignEnd="@+id/basket_buy"/>
+            android:layout_alignTop="@+id/basket_buy" android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

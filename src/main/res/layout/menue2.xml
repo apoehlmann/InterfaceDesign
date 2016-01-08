@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:background="#c1ff2711">
+                android:background="#ff0907">
 
     <ImageView
             android:layout_width="fill_parent"
@@ -18,9 +18,9 @@
             android:text="Medium Text"
             android:fontFamily="fonts/Aller_Rg.ttf"
             android:id="@+id/menue2Title"
-            android:textColor="#090909"
+            android:textColor="#050505"
             android:layout_below="@+id/menue2Image" android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp" android:textStyle="normal"/>
     <SurfaceView
             android:layout_width="fill_parent"
             android:layout_height="1dp"
@@ -36,4 +36,7 @@
                  android:background="#050505"
                  android:layout_marginTop="3dp" android:layout_below="@+id/surfaceView2"
                  android:layout_centerHorizontal="true" android:layout_marginBottom="3dp"/>
+    <SurfaceView android:layout_width="fill_parent" android:layout_height="2dp" android:id="@+id/surfaceView19"
+                 android:background="#050505"
+                 android:layout_alignParentTop="true" android:layout_centerHorizontal="true"/>
 </RelativeLayout>

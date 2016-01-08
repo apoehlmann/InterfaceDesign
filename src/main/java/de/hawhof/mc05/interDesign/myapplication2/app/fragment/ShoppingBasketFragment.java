@@ -54,19 +54,6 @@ public class ShoppingBasketFragment  extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_basket, container, false);
         this.listView = (ListView) rootView.findViewById(R.id.listView_basket);
         this.listView.setAdapter(new ShoppingBasket_ArrayAdapter<BasketItem>(this.getContext(),0,this.getBasket()));
-        Button backBut = (Button) rootView.findViewById(R.id.back_button);
-        backBut.setOnClickListener( new View.OnClickListener(){
-
-            /**
-             * Called when a view has been clicked.
-             *
-             * @param v The view that was clicked.
-             */
-            @Override
-            public void onClick(View v) {
-                getFragmentManager().popBackStack();
-            }
-        });
 
         final TextView erg = (TextView) rootView.findViewById(R.id.erg);
         erg.setText(this.createErg(this.getBasket()));
@@ -86,7 +73,8 @@ public class ShoppingBasketFragment  extends Fragment {
         final List<BasketItem> list = new ArrayList<BasketItem>();
         list.add(new BasketItem(new Detail(this.getResources().obtainTypedArray(R.array.Einzelpodukt1)),3));list.add(new BasketItem(new Detail(this.getResources().obtainTypedArray(R.array.Einzelpodukt2)),3));
         list.add(new BasketItem(new Detail(this.getResources().obtainTypedArray(R.array.Einzelpodukt3)),5));list.add(new BasketItem(new Detail(this.getResources().obtainTypedArray(R.array.Einzelpodukt4)),2));
-        list.add(new BasketItem(new Detail(this.getResources().obtainTypedArray(R.array.Einzelpodukt5)),1));
+        list.add(new BasketItem(new Detail(this.getResources().obtainTypedArray(R.array.Einzelpodukt5)),1));list.add(new BasketItem(new Detail(this.getResources().obtainTypedArray(R.array.Rezept1)),3));
+        list.add(new BasketItem(new Detail(this.getResources().obtainTypedArray(R.array.Rezept2)),3));list.add(new BasketItem(new Detail(this.getResources().obtainTypedArray(R.array.Rezept3)),3));
         return list;
     }
 

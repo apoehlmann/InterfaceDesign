@@ -20,9 +20,9 @@ public class MenueActivity extends AppCompatActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
     private final static int START = 0;
-    private final static int REZEPT = 1;
-    private final static int KOCHBOX = 2;
-    private final static int EINZEL = 3;
+    private final static int REZEPT = 2;
+    private final static int KOCHBOX = 3;
+    private final static int EINZEL = 1;
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -57,7 +57,7 @@ public class MenueActivity extends AppCompatActivity
 
         // Set the drawer toggle as the DrawerListener
         //(DrawerLayout) ((DrawerLayout) findViewById(R.id.drawer_layout)).setDrawerListener().setDrawerListener(mDrawerToggle);
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, FlashFragment.newInstance("","")).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, FlashFragment.newInstance("","")).disallowAddToBackStack().commit();
 
         //getSupportFragmentManager().beginTransaction().replace(R.id.container, StartFragment2.newInstance(MenueActivity.START)).commit();
        // getSupportFragmentManager().beginTransaction().replace(R.id.container, StartFragment.newInstance(MenueActivity.START)).commit();
@@ -78,13 +78,12 @@ public class MenueActivity extends AppCompatActivity
             fragment = ShoppingBasketFragment.newInstance(position+1);
         }else if(position == 9){
             fragment = ProductsOverViewFragment.newInstance(position+1);
-        }else if(position == -1){
-            fragment = FlashFragment.newInstance("","");
         }else{
             fragment = DetailFragment.newInstance(position+1);
         }
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container,fragment ).addToBackStack(null).commit();
+
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.container,fragment ).addToBackStack(null).commit();
     }
 
     public void onSectionAttached(int number) {
@@ -176,7 +175,6 @@ public class MenueActivity extends AppCompatActivity
         /*f (id == R.id.action_settings) {
             return true;
         }*/
-            Toast.makeText(this, "id:" + id, Toast.LENGTH_LONG).show();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -210,7 +208,7 @@ public class MenueActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed(){
-        if(getSupportFragmentManager().getBackStackEntryCount() == 0){
+        if(getSupportFragmentManager().getBackStackEntryCount() <= 1){
             this.finish();
         }else{
             getSupportFragmentManager().popBackStack();

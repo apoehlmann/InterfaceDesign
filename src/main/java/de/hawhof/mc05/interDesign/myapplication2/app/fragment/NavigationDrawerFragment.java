@@ -96,8 +96,8 @@ public class NavigationDrawerFragment extends Fragment {
             }
         });
         List<String> list = new ArrayList<String>();
-        list.add(getString(R.string.title_section1));list.add(getString(R.string.title_section2));list.add(getString(R.string.title_section3));
-        list.add(getString(R.string.title_section4));list.add(getString(R.string.title_section5));list.add(getString(R.string.title_section6));
+        list.add(getString(R.string.title_section1)); list.add(getString(R.string.title_section4));list.add(getString(R.string.title_section2));list.add(getString(R.string.title_section3));
+       list.add(getString(R.string.title_section5));list.add(getString(R.string.title_section6));
         list.add(getString(R.string.title_section7));list.add(getString(R.string.title_section8));
         mDrawerListView.setAdapter(new Sidebar_ArrayAdapter<String>(this.getContext(),0,list));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
