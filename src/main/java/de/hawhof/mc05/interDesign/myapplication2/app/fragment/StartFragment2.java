@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,7 +57,7 @@ public class StartFragment2 extends Fragment{
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_menue2, container, false);
         this.listView = (ExpandableListView) rootView.findViewById(R.id.expandableListView);
-        Menue[] array = {new Menue(this.getResources().obtainTypedArray(R.array.Rezept),this.getContext()),new Menue(this.getResources().obtainTypedArray(R.array.KochBox),this.getContext()),new Menue(this.getResources().obtainTypedArray(R.array.Einzelprodukte),this.getContext())};
+        Menue[] array = {new Menue(this.getResources().obtainTypedArray(R.array.Einzelprodukte),this.getContext()),new Menue(this.getResources().obtainTypedArray(R.array.Rezept),this.getContext()),new Menue(this.getResources().obtainTypedArray(R.array.KochBox),this.getContext())};
         this.list = Arrays.asList(array);
         MenueExpandableAdapter adapter = new MenueExpandableAdapter<Menue>(this.getContext(),list);
         adapter.notifyDataSetChanged();

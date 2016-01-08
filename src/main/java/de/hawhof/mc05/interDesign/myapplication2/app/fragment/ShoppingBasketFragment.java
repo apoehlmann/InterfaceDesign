@@ -77,7 +77,9 @@ public class ShoppingBasketFragment  extends Fragment {
         double erg = 0.0;
         for(BasketItem item : basket)
             erg += item.getCount()*item.getPrice();
-        return "Rechnungsbetrag: "+erg+"€";
+        String ergS = ""+erg;
+        ergS = ergS.substring(0,ergS.indexOf(".")+3);
+        return "Rechnungsbetrag: "+ergS+"€";
     }
 
     private List<BasketItem> getBasket() {

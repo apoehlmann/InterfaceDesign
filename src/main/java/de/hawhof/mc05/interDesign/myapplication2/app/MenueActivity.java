@@ -57,8 +57,9 @@ public class MenueActivity extends AppCompatActivity
 
         // Set the drawer toggle as the DrawerListener
         //(DrawerLayout) ((DrawerLayout) findViewById(R.id.drawer_layout)).setDrawerListener().setDrawerListener(mDrawerToggle);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, FlashFragment.newInstance("","")).commit();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, StartFragment2.newInstance(MenueActivity.START)).commit();
+        //getSupportFragmentManager().beginTransaction().replace(R.id.container, StartFragment2.newInstance(MenueActivity.START)).commit();
        // getSupportFragmentManager().beginTransaction().replace(R.id.container, StartFragment.newInstance(MenueActivity.START)).commit();
     }
 
@@ -77,6 +78,8 @@ public class MenueActivity extends AppCompatActivity
             fragment = ShoppingBasketFragment.newInstance(position+1);
         }else if(position == 9){
             fragment = ProductsOverViewFragment.newInstance(position+1);
+        }else if(position == -1){
+            fragment = FlashFragment.newInstance("","");
         }else{
             fragment = DetailFragment.newInstance(position+1);
         }

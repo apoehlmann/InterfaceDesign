@@ -185,4 +185,11 @@
         Das heiße, gegarte Gemüse in eine Auflaufform oder Schüssel schichten und zuerst mit der Balsamicoreduktion beträufeln und anschließend mit so viel Olivenöl begießen, dass alles bedeckt ist. Falls es als warmer Salat genossen werden soll, mehr Balsamico und weniger Öl nehmen und gleich warm servieren. Sonst einen Tag durchziehen lassen. Evtl. nochmal mit Salz nachwürzen und kalt servieren.
 
         Wenn das Gemüse immer mit Öl bedeckt ist, hält es sich etwa 1 - 2 Wochen im Kühlschrank. </string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_activity_flash">FlashActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

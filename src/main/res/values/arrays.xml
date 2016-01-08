@@ -57,9 +57,9 @@
         <item>0</item>
         <item>Länder</item>
         <item>@drawable/countrys2</item>
+        <item>EMPTY</item>//Einzelprodukt
         <item>@array/LaenderRezepte</item>//Rezepte
         <item>@array/LaenderWochenBox</item>//Wochenbox
-        <item>EMPTY</item>//Einzelprodukt
     </array>
 
     <array name ="LaenderRezepte">
@@ -78,9 +78,9 @@
         <item>0</item>
         <item>Vegan</item>
         <item>@drawable/vegan2</item>
+        <item>@array/VeganEinzel</item>//Einzelprodukt
         <item>@array/VeganRezepte</item>//Rezepte
         <item>@array/VeganWochenBox</item>//Wochenbox
-        <item>@array/VeganEinzel</item>//Einzelprodukt
     </array>
 
     <array name ="VeganRezepte">
@@ -106,9 +106,9 @@
         <item>0</item>
         <item>Fisch</item>
         <item>@drawable/fish2</item>
+        <item>@array/FischEinzel</item>//Einzelprodukt
         <item>@array/FischRezepte</item>//Rezepte
         <item>@array/FischWochenBox</item>//Wochenbox
-        <item>@array/FischEinzel</item>//Einzelprodukt
     </array>
 
     <array name ="FischRezepte">
@@ -134,9 +134,9 @@
         <item>0</item>
         <item>Obst</item>
         <item>@drawable/fruit2</item>
+        <item>@array/ObstEinzel</item>//Einzelprodukt
         <item>@array/ObstRezepte</item>//Rezepte
         <item>@array/ObstWochenBox</item>//Wochenbox
-        <item>@array/ObstEinzel</item>//Einzelprodukt
     </array>
 
     <array name ="ObstRezepte">
@@ -162,9 +162,9 @@
         <item>0</item>
         <item>Gemüse</item>
         <item>@drawable/vegetable2</item>
+        <item>@array/GemueseEinzel</item>//Einzelprodukt
         <item>@array/GemueseRezepte</item>//Rezepte
         <item>@array/GemueseWochenBox</item>//Wochenbox
-        <item>@array/GemueseEinzel</item>//Einzelprodukt
     </array>
 
     <array name ="GemueseRezepte">
@@ -189,9 +189,9 @@
         <item>0</item>
         <item>Konserven</item>
         <item>@drawable/tin2</item>
+        <item>@array/KonservenEinzel</item>//Einzelprodukt
         <item>EMPTY</item>//Rezepte
         <item>EMPTY</item>//Wochenbox
-        <item>@array/KonservenEinzel</item>//Einzelprodukt
     </array>
 
     <array name="KonservenEinzel">
@@ -205,9 +205,10 @@
         <item>0</item>
         <item>Fleisch</item>
         <item>@drawable/meat2</item>
+        <item>@array/FleischEinzel</item>//Einzelprodukt
         <item>@array/FleischRezepte</item>//Rezepte
         <item>@array/FleischWochenBox</item>//Wochenbox
-        <item>@array/FleischEinzel</item>//Einzelprodukt
+
     </array>
 
     <array name ="FleischRezepte">
@@ -235,7 +236,7 @@
         <item>@drawable/pizza</item>
         <item><h1>Kurzbeschreibung</h1>\n\&amp;#8226</item>
         <item>@string/pizzaZ</item>//Beschreibung
-        <item>1.00</item>
+        <item>2.29</item>
         <item>Portion</item>//Einheit
     </array>
 
@@ -245,7 +246,7 @@
         <item>@drawable/rind</item>
         <item>Kurzbeschreibung</item>
         <item>@string/rind</item>//Beschreibung
-        <item>1.00</item>
+        <item>3.99</item>
         <item>Portion</item>//Einheit
 
     </array>
@@ -255,7 +256,7 @@
         <item>@drawable/antipasti</item>
         <item>Kurzbeschreibung</item>
         <item>@string/antipasti</item>//Beschreibung
-        <item>1.00</item>
+        <item>1.99</item>
         <item>Portion</item>//Einheit
 
     </array>
@@ -266,7 +267,7 @@
         <item>@drawable/platzhalter</item>
         <item>Kurzbeschreibung</item>
         <item>@string/blindText</item>//Beschreibung
-        <item>1.0</item>
+        <item>1.45</item>
         <item>Portion</item>//Einheit
 
     </array>
@@ -277,7 +278,7 @@
         <item>@drawable/platzhalter</item>
         <item>Kurzbeschreibung</item>
         <item>@string/blindText</item>//Beschreibung
-        <item>1.0</item>
+        <item>1.00</item>
         <item>Portion</item>//Einheit
 
     </array>
@@ -288,7 +289,7 @@
         <item>@drawable/platzhalter</item>
         <item>Kurzbeschreibung</item>
         <item>@string/blindText</item>//Beschreibung
-        <item>1.0</item>
+        <item>1.00</item>
         <item>Portion</item>//Einheit
 
     </array>
@@ -299,7 +300,7 @@
         <item>@drawable/platzhalter</item>
         <item>Kurzbeschreibung</item>
         <item>@string/blindText</item>//Beschreibung
-        <item>1.0</item>
+        <item>1.00</item>
         <item>Portion</item>//Einheit
 
     </array>
@@ -310,7 +311,7 @@
         <item>@drawable/platzhalter</item>
         <item>Kurzbeschreibung</item>
         <item>@string/blindText</item>//Beschreibung
-        <item>1.0</item>
+        <item>1.00</item>
         <item>Portion</item>//Einheit
 
     </array>
@@ -321,7 +322,7 @@
         <item>@drawable/platzhalter</item>
         <item>Kurzbeschreibung</item>
         <item>@string/fisch1</item>//Beschreibung
-        <item>1.0</item>
+        <item>1.00</item>
         <item>Portion</item>//Einheit
 
     </array>
@@ -332,7 +333,7 @@
         <item>@drawable/platzhalter</item>
         <item>Kurzbeschreibung</item>
         <item>@string/fisch1</item>//Beschreibung
-        <item>1.0</item>
+        <item>1.00</item>
         <item>Portion</item>//Einheit
 
     </array>
@@ -343,7 +344,7 @@
         <item>@drawable/platzhalter</item>
         <item>Kurzbeschreibung</item>
         <item>@string/fisch1</item>//Beschreibung
-        <item>1.0</item>
+        <item>1.00</item>
         <item>Portion</item>//Einheit
 
     </array>
@@ -354,7 +355,7 @@
         <item>@drawable/platzhalter</item>
         <item>Kurzbeschreibung</item>
         <item>@string/fisch1</item>//Beschreibung
-        <item>1.0</item>
+        <item>1.00</item>
         <item>Portion</item>//Einheit
 
     </array>
@@ -365,7 +366,7 @@
         <item>@drawable/platzhalter</item>
         <item>Kurzbeschreibung</item>
         <item>@string/blindText</item>//Beschreibung
-        <item>1.0</item>
+        <item>1.00</item>
         <item>Portion</item>//Einheit
 
     </array>
@@ -376,7 +377,7 @@
         <item>@drawable/platzhalter</item>
         <item>Kurzbeschreibung</item>
         <item>@string/blindText</item>//Beschreibung
-        <item>1.0</item>
+        <item>1.00</item>
         <item>Portion</item>//Einheit
 
     </array>
@@ -387,7 +388,7 @@
         <item>@drawable/platzhalter</item>
         <item>Kurzbeschreibung</item>
         <item>@string/blindText</item>//Beschreibung
-        <item>1.0</item>
+        <item>1.00</item>
         <item>Portion</item>//Einheit
 
     </array>
@@ -398,7 +399,7 @@
         <item>@drawable/platzhalter</item>
         <item>Kurzbeschreibung</item>
         <item>@string/blindText</item>//Beschreibung
-        <item>1.0</item>
+        <item>1.00</item>
         <item>Portion</item>//Einheit
 
     </array>
@@ -409,7 +410,7 @@
         <item>@drawable/platzhalter</item>
         <item>Kurzbeschreibung</item>
         <item>@string/blindText</item>//Beschreibung
-        <item>1.0</item>
+        <item>1.00</item>
         <item>Portion</item>//Einheit
 
     </array>
@@ -587,7 +588,7 @@
         <item>@drawable/tra</item>
         <item>Kurzbeschreibung</item>
         <item>@string/trauben</item>//Beschreibung
-        <item>1.0</item>
+        <item>2.99</item>
         <item>Kilo</item>//Einheit
 
     </array>
@@ -598,7 +599,7 @@
         <item>@drawable/pep</item>
         <item>Kurzbeschreibung</item>
         <item>@string/blindText</item>//Beschreibung
-        <item>1.0</item>
+        <item>2.56</item>
         <item>Stück</item>//Einheit
 
     </array>
@@ -609,7 +610,7 @@
         <item>@drawable/pap</item>
         <item>Kurzbeschreibung</item>
         <item>@string/blindText</item>//Beschreibun
-        <item>1.0</item>
+        <item>1.55</item>
         <item>kg</item>//Einheit
 
     </array>
@@ -619,7 +620,7 @@
         <item>@drawable/kiw</item>
         <item>Kurzbeschreibung</item>
         <item>@string/kiwi</item>//Beschreibung
-        <item>1.0</item>
+        <item>1.39</item>
         <item>Stück</item>//Einheit
 
     </array>
@@ -629,7 +630,7 @@
         <item>@drawable/ban</item>
         <item>Kurzbeschreibung</item>
         <item>@string/banane</item>//Beschreibung
-        <item>1.0</item>
+        <item>1.99</item>
         <item>Stück</item>//Einheit
 
     </array>
