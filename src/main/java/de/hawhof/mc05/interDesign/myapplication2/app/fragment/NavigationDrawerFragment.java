@@ -3,7 +3,9 @@ package de.hawhof.mc05.interDesign.myapplication2.app.fragment;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
@@ -11,12 +13,16 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.view.*;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import de.hawhof.mc05.interDesign.myapplication2.app.R;
+import de.hawhof.mc05.interDesign.myapplication2.app.TypefaceSpan;
 import de.hawhof.mc05.interDesign.myapplication2.app.listViews.Sidebar_ArrayAdapter;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -251,7 +257,12 @@ public class NavigationDrawerFragment extends Fragment {
         actionBar.setDisplayShowTitleEnabled(true);
         actionBar.setHomeButtonEnabled(true);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-        actionBar.setTitle(R.string.app_name);
+
+        SpannableString s = new SpannableString(this.getResources().getString(R.string.app_name));
+        Typeface typeFace=Typeface.createFromFile(new File(Environment.getExternalStorageDirectory().getPath() +"/"+ getContext().getString(R.string.allerbd)));
+        s.setSpan(new TypefaceSpan(typeFace), 0, s.length(),
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        actionBar.setTitle(s);
     }
 
     private ActionBar getActionBar() {

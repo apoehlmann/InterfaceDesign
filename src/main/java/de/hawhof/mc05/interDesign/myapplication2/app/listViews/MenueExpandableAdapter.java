@@ -2,6 +2,8 @@ package de.hawhof.mc05.interDesign.myapplication2.app.listViews;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Typeface;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +15,7 @@ import android.widget.TextView;
 import de.hawhof.mc05.interDesign.myapplication2.app.R;
 import de.hawhof.mc05.interDesign.myapplication2.app.model.Menue;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -144,6 +147,8 @@ public class MenueExpandableAdapter<T> extends BaseExpandableListAdapter {
         if(menue != null) {
             ImageView titleImage = (ImageView) rowView.findViewById(R.id.menue2Image);
             TextView titleText = (TextView) rowView.findViewById(R.id.menue2Title);
+            Typeface typeFace=Typeface.createFromFile(new File(Environment.getExternalStorageDirectory().getPath() +"/"+ context.getString(R.string.allerbd)));
+            titleText.setTypeface(typeFace);
             titleText.setText(menue.getTitle());
             titleImage.setImageDrawable(menue.getImage());
         }
@@ -177,6 +182,8 @@ public class MenueExpandableAdapter<T> extends BaseExpandableListAdapter {
         if(menue != null) {
             ImageView titleImage = (ImageView) rowView.findViewById(R.id.submenueimage);
             TextView titleText = (TextView) rowView.findViewById(R.id.submenuetext);
+            Typeface typeFace=Typeface.createFromFile(new File(Environment.getExternalStorageDirectory().getPath() +"/"+ context.getString(R.string.allerrg)));
+            titleText.setTypeface(typeFace);
             titleText.setText(menue.getString(1));
             titleImage.setImageDrawable(menue.getDrawable(2));
         }

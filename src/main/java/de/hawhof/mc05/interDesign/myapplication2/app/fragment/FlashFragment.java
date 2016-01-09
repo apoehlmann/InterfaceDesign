@@ -2,8 +2,10 @@ package de.hawhof.mc05.interDesign.myapplication2.app.fragment;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import de.hawhof.mc05.interDesign.myapplication2.app.MenueActivity;
 import de.hawhof.mc05.interDesign.myapplication2.app.R;
+
+import java.io.File;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -63,6 +67,7 @@ public class FlashFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
         new Handler().postDelayed(new Runnable() {
 
             // Using handler with postDelayed called runnable run method
@@ -79,6 +84,8 @@ public class FlashFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_flash, container, false);
+        Typeface typeFace=Typeface.createFromFile(new File(Environment.getExternalStorageDirectory().getPath() +"/"+ this.getActivity().getString(R.string.allerbd)));
+        ((TextView)rootView.findViewById(R.id.flashTitle)).setTypeface(typeFace);
         return rootView;
     }
 

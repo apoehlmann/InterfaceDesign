@@ -1,17 +1,23 @@
 package de.hawhof.mc05.interDesign.myapplication2.app.fragment;
 
 import android.app.Activity;
+import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 import de.hawhof.mc05.interDesign.myapplication2.app.MenueActivity;
 import de.hawhof.mc05.interDesign.myapplication2.app.R;
 import de.hawhof.mc05.interDesign.myapplication2.app.model.Detail;
+
+import java.io.File;
 
 /**
  * Created by alex on 03.12.15.
@@ -46,13 +52,29 @@ public class DetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_scrolling, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_scrolling, container, false);
+
         this.detail = ((MenueActivity) this.getActivity()).getDetail();
 
         final TextView describeView = (TextView) rootView.findViewById(R.id.describe_view);
         final TextView priceView = (TextView) rootView.findViewById(R.id.priceView);
+
+        Typeface typeFace=Typeface.createFromFile(new File(Environment.getExternalStorageDirectory().getPath() +"/"+ getContext().getString(R.string.allerrg)));
+
+        describeView.setTypeface(typeFace);
+        typeFace=Typeface.createFromFile(new File(Environment.getExternalStorageDirectory().getPath() +"/"+ getContext().getString(R.string.allerbd)));
+        ((TextView) rootView.findViewById(R.id.textView)).setTypeface(typeFace);
+        priceView.setTypeface(typeFace);
+
         final ImageView titleImageView = (ImageView) rootView.findViewById(R.id.imageView);
         this.editText = (EditText) rootView.findViewById(R.id.countProduct);
+        this.editText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                InputMethodManager inputMethodManager=(InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputMethodManager.toggleSoftInputFromWindow(rootView.getApplicationWindowToken(), InputMethodManager.SHOW_FORCED, 0);
+            }
+        });
         this.imageButton = (FloatingActionButton) rootView.findViewById(R.id.fab1);
 
         this.isSelect = false;
@@ -60,7 +82,7 @@ public class DetailFragment extends Fragment {
             imageButton.setImageResource(android.R.drawable.btn_star_big_on);
         else
             imageButton.setImageResource(android.R.drawable.btn_star_big_off);
-        ((MenueActivity) this.getActivity()).getSupportActionBar().setTitle(this.detail.getTitle());
+        ((MenueActivity) this.getActivity()).setMyTitle(this.detail.getTitle());
         titleImageView.setImageDrawable(this.detail.getImage());
         describeView.setText(this.detail.getDes());
         describeView.setMovementMethod(new ScrollingMovementMethod());

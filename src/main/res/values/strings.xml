@@ -10,6 +10,8 @@
     <string name="title_section7">Favoriten</string>
     <string name="title_section8">Strichcodescanner</string>
 
+    <string name="allerbd">fonts/allerbd.ttf</string>
+    <string name="allerrg">fonts/allerrg.ttf</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

@@ -1,6 +1,8 @@
 package de.hawhof.mc05.interDesign.myapplication2.app.listViews;
 
 import android.content.Context;
+import android.graphics.Typeface;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import de.hawhof.mc05.interDesign.myapplication2.app.R;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -37,6 +40,8 @@ public class Sidebar_ArrayAdapter<T> extends ArrayAdapter<T> {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
         View rowView= inflater.inflate(R.layout.sidebar, null, true);
         TextView txtTitle = (TextView) rowView.findViewById(R.id.textsidebar);
+        Typeface typeFace=Typeface.createFromFile(new File(Environment.getExternalStorageDirectory().getPath() +"/"+ getContext().getString(R.string.allerbd)));
+        txtTitle.setTypeface(typeFace);
         txtTitle.setText((CharSequence) this.getItem(position));
         ImageView img = (ImageView) rowView.findViewById(R.id.imgsidebar);
         img.setImageDrawable(this.getContext().getResources().obtainTypedArray(R.array.iconsSideBar).getDrawable(position));

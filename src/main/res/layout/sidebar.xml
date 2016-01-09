@@ -6,7 +6,7 @@
 
     <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" style="@android:style/Theme.DeviceDefault.Light.DarkActionBar"
+            android:layout_height="wrap_content" style="@style/AppTheme"
             android:id="@android:drawable/ic_menu_gallery">
         <RelativeLayout
                 android:layout_width="match_parent"

@@ -2,11 +2,15 @@ package de.hawhof.mc05.interDesign.myapplication2.app;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -14,6 +18,7 @@ import de.hawhof.mc05.interDesign.myapplication2.app.fragment.*;
 import de.hawhof.mc05.interDesign.myapplication2.app.model.Detail;
 import de.hawhof.mc05.interDesign.myapplication2.app.model.SubMenue;
 
+import java.io.File;
 import java.io.IOException;
 
 public class MenueActivity extends AppCompatActivity
@@ -216,7 +221,12 @@ public class MenueActivity extends AppCompatActivity
     }
 
     public void setMyTitle(String title){
-        this.mTitle = title;
+        SpannableString s = new SpannableString(title);
+        Typeface typeFace=Typeface.createFromFile(new File(Environment.getExternalStorageDirectory().getPath() +"/"+ this.getString(R.string.allerbd)));
+        s.setSpan(new TypefaceSpan(typeFace), 0, s.length(),
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        this.mTitle = s;
         this.getSupportActionBar().setTitle(this.mTitle);
         this.setTitle(this.mTitle);
         mNavigationDrawerFragment.setTitle(this.mTitle);

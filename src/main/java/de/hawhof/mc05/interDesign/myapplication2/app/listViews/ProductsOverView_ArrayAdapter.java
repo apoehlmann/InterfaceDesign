@@ -1,6 +1,8 @@
 package de.hawhof.mc05.interDesign.myapplication2.app.listViews;
 
 import android.content.Context;
+import android.graphics.Typeface;
+import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 import de.hawhof.mc05.interDesign.myapplication2.app.R;
 import de.hawhof.mc05.interDesign.myapplication2.app.model.Detail;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -34,6 +37,8 @@ public class ProductsOverView_ArrayAdapter<T> extends ArrayAdapter<T> {
         View rowView= inflater.inflate(R.layout.list_item_products, null, true);
         TextView txtTitle = (TextView) rowView.findViewById(R.id.name_textview);
         TextView priTitle = (TextView) rowView.findViewById(R.id.price_textview);
+        Typeface typeFace=Typeface.createFromFile(new File(Environment.getExternalStorageDirectory().getPath() +"/"+ getContext().getString(R.string.allerbd)));
+        txtTitle.setTypeface(typeFace);priTitle.setTypeface(typeFace);
 
         ImageView imageView = (ImageView) rowView.findViewById(R.id.product_imageview);
 

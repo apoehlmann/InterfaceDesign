@@ -1,6 +1,8 @@
 package de.hawhof.mc05.interDesign.myapplication2.app.listViews;
 
 import android.content.Context;
+import android.graphics.Typeface;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 import de.hawhof.mc05.interDesign.myapplication2.app.R;
 import de.hawhof.mc05.interDesign.myapplication2.app.model.BasketItem;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -41,6 +44,10 @@ public class ShoppingBasket_ArrayAdapter<T> extends ArrayAdapter<T> {
         TextView txtTitle = (TextView) rowView.findViewById(R.id.item_title_basket);
         EditText editText = (EditText) rowView.findViewById(R.id.baskettextfield_basket);
         TextView price = (TextView) rowView.findViewById(R.id.priceBasketView);
+
+        Typeface typeFace=Typeface.createFromFile(new File(Environment.getExternalStorageDirectory().getPath() +"/"+ context.getString(R.string.allerbd)));
+        price.setTypeface(typeFace);editText.setTypeface(typeFace);txtTitle.setTypeface(typeFace);
+
         ImageView imageView = (ImageView) rowView.findViewById(R.id.imageView2);
 
         BasketItem basketItem = (BasketItem) this.getItem(position);

@@ -1,7 +1,9 @@
 package de.hawhof.mc05.interDesign.myapplication2.app.fragment;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,10 +17,7 @@ import de.hawhof.mc05.interDesign.myapplication2.app.listViews.ShoppingBasket_Ar
 import de.hawhof.mc05.interDesign.myapplication2.app.model.BasketItem;
 import de.hawhof.mc05.interDesign.myapplication2.app.model.Detail;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.ObjectInputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,6 +55,8 @@ public class ShoppingBasketFragment  extends Fragment {
         this.listView.setAdapter(new ShoppingBasket_ArrayAdapter<BasketItem>(this.getContext(),0,this.getBasket()));
 
         final TextView erg = (TextView) rootView.findViewById(R.id.erg);
+        Typeface typeFace=Typeface.createFromFile(new File(Environment.getExternalStorageDirectory().getPath() +"/"+ getContext().getString(R.string.allerbd)));
+        erg.setTypeface(typeFace);
         erg.setText(this.createErg(this.getBasket()));
         return rootView;
     }
