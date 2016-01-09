@@ -2,6 +2,7 @@ package de.hawhof.mc05.interDesign.myapplication2.app.fragment;
 
 import android.app.Activity;
 import android.graphics.Typeface;
+import android.location.Location;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.Fragment;
