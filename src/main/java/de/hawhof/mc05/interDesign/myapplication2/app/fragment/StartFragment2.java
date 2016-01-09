@@ -55,6 +55,7 @@ public class StartFragment2 extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        ((MenueActivity) this.getActivity()).getSupportActionBar().show();
         View rootView = inflater.inflate(R.layout.fragment_menue2, container, false);
         this.listView = (ExpandableListView) rootView.findViewById(R.id.expandableListView);
         Menue[] array = {new Menue(this.getResources().obtainTypedArray(R.array.Einzelprodukte),this.getContext()),new Menue(this.getResources().obtainTypedArray(R.array.Rezept),this.getContext()),new Menue(this.getResources().obtainTypedArray(R.array.KochBox),this.getContext())};

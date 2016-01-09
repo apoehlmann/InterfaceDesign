@@ -59,11 +59,11 @@ public class MenueActivity extends AppCompatActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+        getSupportActionBar().hide();
 
         // Set the drawer toggle as the DrawerListener
         //(DrawerLayout) ((DrawerLayout) findViewById(R.id.drawer_layout)).setDrawerListener().setDrawerListener(mDrawerToggle);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, FlashFragment.newInstance("","")).disallowAddToBackStack().commit();
-
         //getSupportFragmentManager().beginTransaction().replace(R.id.container, StartFragment2.newInstance(MenueActivity.START)).commit();
        // getSupportFragmentManager().beginTransaction().replace(R.id.container, StartFragment.newInstance(MenueActivity.START)).commit();
     }
