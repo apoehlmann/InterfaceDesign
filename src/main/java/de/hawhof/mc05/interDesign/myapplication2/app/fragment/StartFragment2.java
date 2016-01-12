@@ -5,13 +5,11 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
-import android.widget.Toast;
 
 import de.hawhof.mc05.interDesign.myapplication2.app.MenueActivity;
 import de.hawhof.mc05.interDesign.myapplication2.app.R;
@@ -74,10 +72,8 @@ public class StartFragment2 extends Fragment{
                 SharedPreferences settings = getActivity().getSharedPreferences("", Context.MODE_PRIVATE);
                 SharedPreferences.Editor prefEditor = settings.edit();
                 prefEditor.putInt("TYPE", groupPosition+3);
-                Toast.makeText(getContext(), String.valueOf(settings.getInt("TYPE", 5)), Toast.LENGTH_LONG).show();
                 prefEditor.commit();
                 Log.d(this.getClass().toString(), "" + groupPosition + " " + childPosition);
-                Toast.makeText(getContext(),list.get(groupPosition).getSubMenues().get(childPosition).getText(2),Toast.LENGTH_LONG).show();
                 selectItem(new SubMenue(list.get(groupPosition).getSubMenues().get(childPosition), getActivity()));
                 return false;
             }

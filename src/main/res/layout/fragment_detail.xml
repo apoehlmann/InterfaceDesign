@@ -26,7 +26,7 @@
             android:layout_height="60dp"
             android:id="@+id/imageButton"
             android:fontFamily="fonts/Aller_Rg.ttf"
-            android:src="@drawable/shopping_basket_adds"
+            android:src="@drawable/shopping_basket_add"
             android:layout_below="@+id/surfaceView12" android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"/>
     <TextView

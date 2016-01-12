@@ -9,8 +9,9 @@
             android:id="@+id/submenueimage"
             android:src="@android:drawable/picture_frame"
             android:layout_marginLeft="20dp" android:layout_marginStart="16dp" android:layout_marginTop="10dp"
-            android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" android:layout_marginBottom="10dp"/>
+            android:layout_alignParentTop="false" android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" android:layout_marginBottom="10dp"
+            android:layout_centerVertical="true"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -19,7 +20,7 @@
             android:fontFamily="fonts/Aller_Rg.ttf"
             android:id="@+id/submenuetext"
             android:layout_marginLeft="33dp"
-            android:layout_marginStart="33dp" android:layout_alignTop="@+id/submenueimage"
+            android:layout_marginStart="33dp"
             android:layout_toRightOf="@+id/submenueimage" android:layout_toEndOf="@+id/submenueimage"
-            android:textColor="#0b0b0b"/>
+            android:textColor="#0b0b0b" android:layout_centerVertical="true"/>
 </RelativeLayout>

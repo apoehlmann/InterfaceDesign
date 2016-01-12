@@ -6,10 +6,10 @@
         <item>@drawable/einzels</item>
         <item>@drawable/rezepts</item>
         <item>@drawable/kochboxs</item>
-        <item>@drawable/logos</item>
-        <item>@drawable/logos</item>
-        <item>@drawable/logos</item>
-        <item>@drawable/logos</item>
+        <item>@drawable/shopping_baskets</item>
+        <item>@drawable/konto</item>
+        <item>@android:drawable/star_big_on</item>
+        <item>@drawable/scanner</item>
     </array>
 
     <array name="Start">
