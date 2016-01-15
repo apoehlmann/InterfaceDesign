@@ -79,14 +79,16 @@ public class MenueActivity extends AppCompatActivity
             fragment = StartFragment2.newInstance(MenueActivity.KOCHBOX);
         }else if(position == MenueActivity.EINZEL){
             fragment = StartFragment2.newInstance(MenueActivity.EINZEL);
-        }else if(position < 9){
+        }else if(position == 4){
             fragment = ShoppingBasketFragment.newInstance(position+1);
+        }else if(position < 9){
+            Toast.makeText(this,"Die ausgewählte Seite wurde nicht designt für die Studienarbeit",Toast.LENGTH_LONG).show();
         }else if(position == 9){
             fragment = ProductsOverViewFragment.newInstance(position+1);
         }else{
             fragment = DetailFragment.newInstance(position+1);
         }
-
+        if(fragment != null)
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.container,fragment ).addToBackStack(null).commit();
     }
