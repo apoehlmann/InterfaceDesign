@@ -81,9 +81,9 @@ public class MenueActivity extends AppCompatActivity
             fragment = StartFragment2.newInstance(MenueActivity.EINZEL);
         }else if(position == 4){
             fragment = ShoppingBasketFragment.newInstance(position+1);
-        }else if(position < 9){
+        }else if(position < 11){
             Toast.makeText(this,"Die ausgewählte Seite wurde nicht designt für die Studienarbeit",Toast.LENGTH_LONG).show();
-        }else if(position == 9){
+        }else if(position == 11){
             fragment = ProductsOverViewFragment.newInstance(position+1);
         }else{
             fragment = DetailFragment.newInstance(position+1);
@@ -129,15 +129,7 @@ public class MenueActivity extends AppCompatActivity
                 mTitle = getString(R.string.title_section7);
                 editor.putString("PAGE",getString(R.string.title_section7));
                 break;
-            case 8:
-                mTitle = getString(R.string.title_section8);
-                editor.putString("PAGE",getString(R.string.title_section8));
-                break;
-            case 9:
-                mTitle = getString(R.string.title_section8);
-                editor.putString("PAGE",getString(R.string.title_section8));
-                break;
-            case 10:
+            case 11:
                 mTitle = this.detail.getTitle();
                 editor.putString("PAGE","Produkt");
                 break;

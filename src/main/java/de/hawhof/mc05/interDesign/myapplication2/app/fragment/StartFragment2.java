@@ -114,7 +114,7 @@ public class StartFragment2 extends Fragment{
             details[z] = new Detail(this.getResources().obtainTypedArray(subMenue.getSubMenues().get(z).getResourceId(z,-8)));
         ((MenueActivity) this.getActivity()).setSubMenue(subMenue);
         ((MenueActivity) this.getActivity()).setDetails(details);
-        ((MenueActivity) this.getActivity()).onNavigationDrawerItemSelected(9);
+        ((MenueActivity) this.getActivity()).onNavigationDrawerItemSelected(11);
         ((MenueActivity) this.getActivity()).setMyTitle(subMenue.getTitle());
     }
 

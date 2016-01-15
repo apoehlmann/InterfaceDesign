@@ -71,6 +71,6 @@ public class ProductsOverViewFragment extends Fragment {
             listView.setItemChecked(position, true);
         }
         ((MenueActivity) this.getActivity()).setDetail((Detail) this.listView.getAdapter().getItem(position));
-        ((MenueActivity) this.getActivity()).onNavigationDrawerItemSelected(10);
+        ((MenueActivity) this.getActivity()).onNavigationDrawerItemSelected(12);
     }
 }

@@ -9,6 +9,8 @@
     <string name="title_section6">Konto</string>
     <string name="title_section7">Favoriten</string>
     <string name="title_section8">Strichcodescanner</string>
+    <string name="title_section9">Hilfe</string>
+    <string name="title_section10">Impressum</string>
 
     <string name="allerbd">fonts/allerbd.ttf</string>
     <string name="allerrg">fonts/allerrg.ttf</string>
